@@ -15,22 +15,28 @@ Company: ZORRI S.R.L. · CUI 55137499 · Trade register J2026042991009 · EUID R
 - Advisory Hour — per hour: One hour on an AI build, a governance question, a funding call or a go-to-market decision, with written notes after. [All practices]
 - Expert Call — per hour: Expert input on AI products, HR tech and skills-based hiring, EU pay transparency, B2B tech go-to-market and the CEE market. [Research]
 - Job-Ad Pay Transparency Check — up to 3 job ads: Up to three job ads read against Directive (EU) 2023/970: what is missing, what reads as biased, and a corrected version. [Research]
-- Funding Eligibility Check — per call: Is your company and project eligible for a specific call? A yes or no with the reasons, the gaps and what it would take. [Research]
+- Funding Eligibility Check — per call: A senior consultant reads the call against your company and project, then gives you a yes or no with the reasons, the gaps and what it would take. [Research]
 - AI Search Visibility Audit — per website: How ChatGPT, Claude, Perplexity and Google's AI answers describe your company today, and the fixes: structured data, llms.txt, content and category language. [Strategy & GTM]
 - Talk or Training Session — per session: A talk or hands-on session on AI orchestration, AI governance, EU pay transparency or B2B go-to-market. [All practices]
 - AI Workflow Audit — per workflow: An existing AI workflow tested for consistency and failure modes: repeat-run tests, edge cases, where it can ship a wrong answer, and what to fix first. [AI orchestration]
 - AI Adoption Workshop — half day or full day: Where AI helps in your workflows, what to automate first, what not to trust, and a 30-day plan. [AI orchestration]
 - Positioning Workshop — one day: A one-day working session that ends with a positioning statement, category choice and messaging your team agrees on. [Strategy & GTM]
 - AI Governance Review — per system: An AI system mapped against the EU AI Act and GDPR: risk classification, provider or deployer role, documentation gaps and what to fix first. Not legal advice. [AI orchestration]
-- Research Brief — per question: One market, labour-market or competitor question, answered with sources and a written brief. [Research]
+- Research Brief — per question: One market, labour-market or competitor question, owned by a senior researcher who checks every source and signs off the written brief. [Research]
 - Analyst Relations Readiness — per programme: The analysts who matter for your category, what they expect, and briefing materials ready for the first conversations. [Strategy & GTM]
-- Pay Transparency Readiness Sprint — 2 weeks: An audit of up to 15 job ads and the pay practice behind them, a written pay-range justification per role, a gap list against Directive (EU) 2023/970, and a readout. Not legal advice. [Research]
+- Pay Transparency Readiness Sprint — 2 weeks: A named lead audits up to 15 job ads and the pay practice behind them, writes a pay-range justification per role and a gap list against Directive (EU) 2023/970, and walks your team through it. Not legal advice. [Research]
 - AI Orchestration Sprint — 2 weeks: One production AI workflow with versioned prompts, schema-checked output and a quality gate that fails closed, plus documentation and handover. [AI orchestration]
-- Fractional GTM Lead — per month, 4 days: Four days a month owning positioning, analyst relations, demand generation or launches alongside your team. [Strategy & GTM]
+- Fractional CMO — per month, 4 days: Four days a month owning positioning, analyst relations, demand generation or launches alongside your team. [Strategy & GTM]
 - GTM Sprint — 2–4 weeks: Positioning and messaging, a category and competitor map, a pricing and channel plan, and a launch plan. [Strategy & GTM]
 - External Project Management — monthly retainer: Ongoing project management and hand-holding across research, AI builds and launches: planning, vendors, weekly check-ins and reporting. [All practices]
-- Funding Application Support — scoped per call: Eligibility check, project design and work plan, budget logic and indicators, and the application file ready to submit. No outcome is guaranteed. [Research]
+- Funding Application Support — scoped per call: One responsible lead takes your application from eligibility to a file ready to submit: project design, work plan, budget logic and indicators. No outcome is guaranteed. [Research]
 - Ready-made AI Automations — licensed per company: AI automations for recurring tasks, such as building accounting or stock documents from a spreadsheet, licensed and set up for your company. [AI orchestration]
+- Funding support — scoped per call or round: From EU projects and grants to investor decks: we find the right money, check you can get it, and build the case. [Research]
+- Market and competitive intelligence — per question or 2–4 weeks: Who your buyers are, who you're up against and what makes you hard to replace, researched for insight and opportunity. [Research]
+- Capability intelligence — per project or via ReLoop.me: Our niche, built on ReLoop.me: a neutral read of professional capability in CVs and job descriptions, for skills-based hiring and nonlinear careers. [Research]
+- Moat and Market Position Research — 2–4 weeks: A senior strategist maps where you stand against competitors and substitutes, tests what your advantage really rests on, and shows you how to deepen it. [Research]
+- AI Opportunity Assessment — 1–2 weeks: A structured look across your operations to find, size and prioritise the workflows worth automating first. [AI orchestration]
+- Product Launch Programme — 6–12 weeks: Research, positioning, product marketing and launch execution in one engagement, run with your team. [Strategy & GTM]
 
 ## Product
 
@@ -92,7 +98,7 @@ Story · Strategy · Systems
 
    Services designed for
 
-   Companies of any size, at any stage, that want senior help to move faster.
+   B2B tech teams from seed to scale-up, and EU companies putting AI into operations.
 
     Explorers
 
@@ -113,31 +119,35 @@ Story · Strategy · Systems
    We support other builders, and we also build our own.
 
     ReLoop.me
-Live
+Live · public beta
 
     Capability intelligence for nonlinear careers and skills-based hiring
 
-    ReLoop.me provides a neutral read of professional capability, in both CVs and job descriptions, to support skills-based hiring and nonlinear careers. It stands for calibrated signal over inflation: what a person can actually do, and what a role actually asks, stated plainly for both sides. The tech is built to hold that line: versioned prompts, repeat-run testing, a fail-closed delivery gate and EU AI Act boundaries written into the design.
+    Our own product: a neutral read of CVs and job ads, for skills-based hiring and nonlinear careers.
 
-     Role Intel reads a job description
+     Role Intel
 
-     API & MCP server for platforms
+     Profile Intel
 
-     Profile Intel reads a CV
+     API & MCP server
+
+     ESCO Skills Map
 
      Job Ad Index coming soon
+
+    Privacy · API docs
 
     Visit ReLoop.me
 
    The team behind ZORRI
 
-   A founder-led core team of three, plus tech advisors and a network of collaborators.
+   Founder-led, with vetted specialists brought in for each project.
 
     Ligia Adam
 
     Founder and principal
 
-    15+ years in B2B tech go-to-market, now building AI systems hands-on. Leads or coordinates every engagement.
+    A builder and operator: she sets up the function, then runs it. 15+ years in B2B tech go-to-market, now building AI systems hands-on.
 
     Forbes 30 Under 30 Romania, 2018. Forbes Tech Top 100 Women Entrepreneurs in Europe to Follow, 2018.
 
@@ -160,7 +170,7 @@ GovTech
 CivicTech
 EU-funded project manager
 
-  Team Intel
+  Full Team Intel
 
    Project leads
 Experienced PMs
@@ -178,6 +188,8 @@ Lawyers who review the regulatory and contractual side when a project needs it.
 Engineering and data
 Software and data collaborators from our network, matched to your stack.
 
+  Meet the team
+
   Tell us what you want to build, research or launch
 
   A few lines on your idea or what you need help with is enough.
@@ -189,117 +201,176 @@ Software and data collaborators from our network, matched to your stack.
 
 Services
 
-  Every way to work with ZORRI
+  How we can help
 
-  Fixed scope, agreed before we start.
+  From understanding the opportunity to building the system and taking it to market, ZORRI gives you senior thinking and hands-on execution: one team that works as an extension of yours.
 
-  19 ways to work with ZORRI across AI systems, research and go-to-market. Pick one, email us its name, and you'll get a short written scope before anything starts.
+  Get in touch
 
-  All offers
+   Where we do our best work
 
-   OfferPracticeFormat
+   Research · Strategy & GTM · AI Systems · Execution
 
-     Advisory HourOne hour on an AI build, a governance question, a funding call or a go-to-market decision, with written notes after. | 
-     All practices | 
-     per hour | 
+   ResearchValidate before investing.See services
 
-     Expert CallExpert input on AI products, HR tech and skills-based hiring, EU pay transparency, B2B tech go-to-market and the CEE market. | 
-     Research | 
-     per hour | 
+   Strategy & GTMPosition and commercialise.See services
 
-     Job-Ad Pay Transparency CheckUp to three job ads read against Directive (EU) 2023/970: what is missing, what reads as biased, and a corrected version. | 
-     Research | 
-     up to 3 job ads | 
+   AI SystemsBuild and automate.See services
 
-     Funding Eligibility CheckIs your company and project eligible for a specific call? A yes or no with the reasons, the gaps and what it would take. | 
-     Research | 
-     per call | 
+   Strategic ExecutionGet the work delivered.See services
 
-     AI Search Visibility AuditHow ChatGPT, Claude, Perplexity and Google's AI answers describe your company today, and the fixes: structured data, llms.txt, content and category language. | 
-     Strategy & GTM | 
-     per website | 
+   Research
 
-     Talk or Training SessionA talk or hands-on session on AI orchestration, AI governance, EU pay transparency or B2B go-to-market. | 
-     All practices | 
-     per session | 
+   Know what to really focus on.
 
-     AI Workflow AuditAn existing AI workflow tested for consistency and failure modes: repeat-run tests, edge cases, where it can ship a wrong answer, and what to fix first. | 
-     AI orchestration | 
-     per workflow | 
+   From grants worth applying to, to deep market positioning: how to find, define and deepen your moat.
 
-     AI Adoption WorkshopWhere AI helps in your workflows, what to automate first, what not to trust, and a 30-day plan. | 
-     AI orchestration | 
-     half day or full day | 
+    Market and competitive intelligenceWho your buyers are, who you're up against and what makes you hard to replace, researched for insight and opportunity.
 
-     Positioning WorkshopA one-day working session that ends with a positioning statement, category choice and messaging your team agrees on. | 
-     Strategy & GTM | 
-     one day | 
+      Who it's for
+Decisions that need evidence first.
 
-     AI Governance ReviewAn AI system mapped against the EU AI Act and GDPR: risk classification, provider or deployer role, documentation gaps and what to fix first. Not legal advice. | 
-     AI orchestration | 
-     per system | 
+      Engagement
+Per question or 2–4 weeks
 
-     Research BriefOne market, labour-market or competitor question, answered with sources and a written brief. | 
-     Research | 
-     per question | 
+     What we help with
 
-     Analyst Relations ReadinessThe analysts who matter for your category, what they expect, and briefing materials ready for the first conversations. | 
-     Strategy & GTM | 
-     per programme | 
+     Market and customer research
+Competitor and substitute mapping
+Your moat, defined and stress-tested
 
-     Pay Transparency Readiness SprintAn audit of up to 15 job ads and the pay practice behind them, a written pay-range justification per role, a gap list against Directive (EU) 2023/970, and a readout. Not legal advice. | 
-     Research | 
-     2 weeks | 
+     Ask about this
 
-     AI Orchestration SprintOne production AI workflow with versioned prompts, schema-checked output and a quality gate that fails closed, plus documentation and handover. | 
-     AI orchestration | 
-     2 weeks | 
+    Capability intelligenceOur niche, built on ReLoop.me: a neutral read of professional capability in CVs and job descriptions, for skills-based hiring and nonlinear careers.
 
-     Fractional GTM LeadFour days a month owning positioning, analyst relations, demand generation or launches alongside your team. | 
-     Strategy & GTM | 
-     per month, 4 days | 
+      Who it's for
+Employers, recruiters and HR tech platforms.
 
-     GTM SprintPositioning and messaging, a category and competitor map, a pricing and channel plan, and a launch plan. | 
-     Strategy & GTM | 
-     2–4 weeks | 
+      Engagement
+Per project or via ReLoop.me
 
-     External Project ManagementOngoing project management and hand-holding across research, AI builds and launches: planning, vendors, weekly check-ins and reporting. | 
-     All practices | 
-     monthly retainer | 
+     What we help with
 
-     Funding Application SupportEligibility check, project design and work plan, budget logic and indicators, and the application file ready to submit. No outcome is guaranteed. | 
-     Research | 
-     scoped per call | 
+     EU pay transparency readiness (Directive (EU) 2023/970), not legal advice
+Job-ad checks for missing pay ranges and biased wording
+Role Intel and Profile Intel reports, through ReLoop.me
+The ReLoop.me API and MCP server for platforms, at api.reloop.me
+Capability and skills research for hiring decisions
 
-     Ready-made AI AutomationsAI automations for recurring tasks, such as building accounting or stock documents from a spreadsheet, licensed and set up for your company. | 
-     AI orchestration | 
-     licensed per company | 
+     Ask about this
 
-  Every engagement is scoped and quoted in writing before work starts. ZORRI is not a VAT payer, so quotes are final, with no VAT added.
+    Funding supportFrom EU projects and grants to investor decks: we find the right money, check you can get it, and build the case.
 
-   Questions
+      Who it's for
+Companies raising public or private money.
 
-   Buying from ZORRI
+      Engagement
+Scoped per call or round
 
-   How do I buy one of these?
+     What we help with
 
-   Email us (hello at zorri.ro) with the offer name and a few lines about your situation. You get a short written scope and quote, and work starts once you confirm.
+     Eligibility checks for EU and national calls
+Grant and EU project applications, from design to submission
+Investor decks and the narrative behind them
+
+     Ask about this
+
+   Discuss a research question
+
+   Strategy & GTM
+
+   Build a market position that sells.
+
+   Positioning, differentiation, pricing and go-to-market execution for technology products.
+
+   Positioning and category design
+Go-to-market strategy
+Product launches
+Pricing and packaging
+AI search visibility (GEO)
+Analyst relations
+Demand generation
+Fractional CMO
+
+   Discuss a launch
+
+   AI Systems
+
+   Turn AI potential into working systems.
+
+   Design, orchestrate and validate AI workflows that solve real operational problems, from AI agents to deterministic pipelines.
+
+   LLM pipelines and agents
+AI opportunity and workflow audits
+Deterministic automations
+Evaluation and quality gates
+APIs and MCP servers
+AI governance (EU AI Act, GDPR)
+Team workshops
+Ready-made automations
+
+   Discuss an AI workflow
+
+   Strategic Execution
+
+   Senior expertise, extended.
+
+   Advice, project management and hands-on delivery that join research, AI and go-to-market into one engagement.
+
+   External project management
+Advisory and expert calls
+Talks and workshops
+Vendor coordination
+Board and investor reporting
+Interim and fractional roles
+
+   Discuss your project
+
+   Featured engagements
+
+   The engagements most clients start with.
+
+   ResearchFunding support
+From EU projects and grants to investor decks: we find the right money, check you can get it, and build the case.
+scoped per call or round
+
+   Strategy & GTMGTM Sprint
+Positioning and messaging, a category and competitor map, a pricing and channel plan, and a launch plan.
+2–4 weeks
+
+   AI SystemsAI Orchestration Sprint
+One production AI workflow with versioned prompts, schema-checked output and a quality gate that fails closed, plus documentation and handover.
+2 weeks
+
+   Ongoing partnershipFractional CMO
+Four days a month owning positioning, analyst relations, demand generation or launches alongside your team.
+per month, 4 days
+
+   Working with ZORRI
+
+   How do I start?
+
+   Email a few lines about what you need, or the name of a service. You get a reply within 2 working days and a free 30-minute call, then a written scope and quote. Work starts once you confirm.
 
    How is an engagement quoted?
 
    Every engagement is scoped and quoted in writing before work starts. ZORRI is not a VAT payer, so quotes are final, with no VAT added.
 
-   Can you combine offers?
+   Can we start small?
 
-   Yes. Many projects start with a small offer, such as an audit or a check, and continue into a sprint once the scope is clear.
+   Yes. Many projects start with a focused engagement, such as an audit or a research brief, and continue into a sprint or an ongoing partnership once the scope is clear.
+
+   Is the governance and pay transparency work legal advice?
+
+   No. It is operational readiness: classification, gaps and what to fix. Where you need a legal opinion, we work alongside your lawyers.
 
    Do you work outside Romania?
 
-   Yes. ZORRI works with clients across the European Union, in English and Romanian, remotely or in person in Bucharest.
+   Yes. ZORRI works with clients across the European Union, in English and Romanian, remotely or in person, based on availability.
 
-  Found the one you need?
+  Not sure what you need?
 
-  Email its name and a few lines about your situation.
+  Start with a conversation. We'll help find the problem and the right next step.
 
   Email us
 
@@ -409,6 +480,16 @@ Progress reporting to founders or the board
     Set-up in your tools
 Checks before anything is issued
 Licence per company
+
+    AI Opportunity Assessment
+
+    1–2 weeks
+
+    For companies that know AI could help, but not where to start.
+
+    Interviews with the people who run the work
+A map of candidate workflows, scored for value and risk
+A prioritised shortlist and the first build to start
 
   Every engagement is scoped and quoted in writing before work starts. ZORRI is not a VAT payer, so quotes are final, with no VAT added.
 
@@ -555,6 +636,48 @@ Project design and work plan
 Budget logic and indicators
 The application file, ready to submit
 
+    Funding support
+
+    scoped per call or round
+
+    For companies raising public or private money.
+
+    Eligibility checks for EU and national calls
+Grant and EU project applications, from design to submission
+Investor decks and the narrative behind them
+
+    Market and competitive intelligence
+
+    per question or 2–4 weeks
+
+    For decisions that need evidence first.
+
+    Market and customer research
+Competitor and substitute mapping
+Your moat, defined and stress-tested
+
+    Capability intelligence
+
+    per project or via ReLoop.me
+
+    For employers, recruiters and HR tech platforms.
+
+    EU pay transparency readiness (Directive (EU) 2023/970), not legal advice
+Job-ad checks for missing pay ranges and biased wording
+Role Intel and Profile Intel reports, through ReLoop.me
+The ReLoop.me API and MCP server for platforms, at api.reloop.me
+Capability and skills research for hiring decisions
+
+    Moat and Market Position Research
+
+    2–4 weeks
+
+    For founders and leadership teams who need to know what makes them hard to replace.
+
+    Competitor and substitute map
+Your moat, defined and stress-tested
+Where to deepen it, prioritised
+
   Pay transparency and governance work is operational readiness, not legal advice.
 Every engagement is scoped and quoted in writing before work starts. ZORRI is not a VAT payer, so quotes are final, with no VAT added.
 
@@ -661,7 +784,7 @@ Positioning and messaging document
 Briefing deck and message house
 Evaluation calendar
 
-    Fractional GTM Lead
+    Fractional CMO
 
     per month, 4 days
 
@@ -692,6 +815,17 @@ Launch plan
 Vendor and freelancer coordination
 Progress reporting to founders or the board
 
+    Product Launch Programme
+
+    6–12 weeks
+
+    For a product going to market for the first time, or into a new market.
+
+    Buyer and competitor research
+Positioning, messaging and launch narrative
+Launch plan, materials and channel set-up
+Weekly execution until launch
+
   Every engagement is scoped and quoted in writing before work starts. ZORRI is not a VAT payer, so quotes are final, with no VAT added.
 
    Questions
@@ -721,50 +855,120 @@ Progress reporting to founders or the board
 ---
 # https://zorri.ro/about
 
-About
+About ZORRI
 
-  Ligia Adam
+  Why ZORRI
 
-  Founder of ZORRI. Builder, then operator.
+  The distance between an idea and a working business is rarely just technical. It takes the right insights, owned choices and sturdy systems that can carry the vision forward. ZORRI helps you close that distance.
 
-  Ligia has spent more than fifteen years making complex technology legible to the market, in cybersecurity, enterprise hardware, edtech, civic tech, energy and now AI. She founded ZORRI in 2026 and built its product, ReLoop.me, end to end.
+   We know the gap. We've been there.
 
-   What she does, with the evidence
+   We've sat on your side of the table, so we know what you need: plug-and-play senior professionals who step into your idea and get the work done. That's what we offer.
 
-   Drawn from her CV and from 72 runs of ReLoop.me's own Profile Intel on it. Across those runs, one read held steady: she builds the function, then runs it.
+   We roll up our sleeves and help you:
 
-    B2B go-to-market and positioning15+ years across cybersecurity, hardware, edtech, civic tech and AI: positioning, category design, messaging, pricing, demand generation, SEO and GEO.
+    process research into decisions you can act on
 
-    Analyst relations and enterprise credibilityRan Bitdefender's industry analyst relations programme and coordinated the evaluation behind its 2016 Gartner Magic Quadrant move from Niche Player to Visionary. Built its Salesforce-based customer reference programme.
+    turn strategy into working operations
 
-    AI product build and evaluationDesigned and shipped ReLoop.me end to end: multi-node LLM pipelines on the Claude API, n8n orchestration, versioned prompts, regression fixtures and a fail-closed delivery gate.
+    take AI experiments into production
 
-    Zero-to-one functionsCo-founded CivicTech Romania. Grew Digital Nation's marketing from one part-time role to a four-person team; its Profesor în Online programme went from 3,000 to 40,957 teachers in under nine months.
+    turn a working product into a story the market buys
 
-    Regulation, governance and public programmesEU AI Act classification and Art. 25 boundaries, EU Pay Transparency Directive 2023/970, GDPR by design. EU-funds project manager certificate (2021). GovITHub fellow, 1 of 20 selected from 3,200 applicants.
+    swap separate collaborators for one team you manage once
 
-  Forbes 30 Under 30 Romania 2018, with the CivicTech Romania team. Forbes Tech Top 100 Women Entrepreneurs in Europe to Follow 2018.
+   Story · Strategy · Systems
 
-   Where the work was done
+   Our process, our focus.
 
-   ZORRI and ReLoop.meFounder and AI product owner, 2026–present
+   StorySee the bigger picture.
+Every project starts with the people, the market and the problem. We question assumptions and find the signal in the noise.
 
-   MiG Eco EnergyMarketing and business operations lead, 2021–present
+   StrategyEmpower your idea.
+We connect evidence, business priorities and what is technically possible into a direction you can actually pursue.
 
-   Digital NationHead of marketing, 2020–2021
+   SystemsMake things happen.
+Ideas become valuable when they work in practice. We build, orchestrate and improve the systems that turn decisions into outcomes.
 
-   Lenovo RomaniaCountry marketing manager, 2019–2020
+   Services
 
-   CivicTech RomaniaCo-founder and coordinator, 2017–2018
+   What ZORRI does
 
-   Romanian Government, GovITHubFellow and RoDiaspora product owner, 2016–2017
+    Strategy and go-to-marketPositioning and messaging
+Product launches
+Fractional CMO
+AI search visibility (GEO)
+Analyst relations
+Example: taking an enterprise cybersecurity brand to global markets.
 
-   BitdefenderAnalyst relations and global enterprise marketing, global PR, social media, 2011–2016
+    Research and market intelligenceMarket and competitive research
+Labour-market intelligence
+Capability intelligence
+Pay transparency audits
+Example: an open ESCO skills map; the ReLoop.me Job Ad Index (coming soon).
 
-  Education: MA in Political Communication and BA in Communication and Public Relations, SNSPA Bucharest. Languages: Romanian, English, French. LinkedIn · GitHub
+    AI systems and software developmentLLM pipelines and agents
+APIs and MCP servers
+Automations
+Data pipelines and semantic search
+Example: ReLoop.me · Role Intel | Profile Intel | API | MCP Server | ESCO Skills Map
 
-  Work with Ligia
+    AI consultancy and governanceAI opportunity assessments
+Workflow audits
+Evaluation and quality gates
+EU AI Act and GDPR readiness
 
-  Through ZORRI: an advisory hour, an expert call, or any of the offers on the services page.
+    Project management and funding supportProject management and coordination
+EU projects and grants
+Investor decks
+Example: ZORRI's PoCIDIF innovation grant application.
+
+   The team
+
+   Who's behind ZORRI
+
+   The team we bring in
+
+    DeliveryExperienced PMs who keep the plan on track
+
+    EngineeringTech advisors and data experts who build and review
+
+    DesignProduct and brand designers
+
+    LegalEU AI Act, GDPR and contract specialists
+
+    NetworkSpecialists matched to your stack and market
+
+   ZORRI is managed and represented by Ligia Adam, a senior professional with 15+ years at the intersection of digital technology and communication. She coordinates a small team of senior professionals who take on the project-based services above.
+
+   ZORRI also operates ReLoop.me, its own capability intelligence product, now in public beta.
+
+   Connect on LinkedIn
+
+    Principles
+
+    What we believe
+
+    Technology should solve real problems, not add layers of complexity.
+
+    Know the place you're building in, before you build.
+
+    AI needs systems, evaluation and human accountability.
+
+    A strategy your team can't act on next week is just a document.
+
+    Small, capable teams can do significant things.
+
+   The proof · an in-house product
+
+   We build what we believe in.
+
+   ReLoop.me is where we test our methods first: research, then AI pipelines with quality checks, then go-to-market. The same process we use for client work.
+
+   Explore ReLoop.me
+
+  There is always a better way to make an idea happen.
+
+  Exploring an opportunity, building an AI system or bringing a product to market? Let's work out what comes next.
 
   Email us

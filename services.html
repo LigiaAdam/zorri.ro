@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- ZORRI /services — VERSION 4.0.0 -->
+<!-- ZORRI /services — VERSION 4.2.0 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Services — ZORRI</title>
-<meta name="description" content="All 19 ZORRI offers: advisory hour, expert calls, job-ad and funding checks, AI search visibility audit, AI workflow audit, workshops, sprints and fractional go-to-market.">
+<meta name="description" content="ZORRI services in four lines: Research, AI Systems, Strategy &amp; GTM and Strategic Execution. AI orchestration sprints, AI workflow audits, AI governance reviews, research briefs, GTM sprints and fractional go-to-market leadership.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <meta name="author" content="Ligia Adam, ZORRI S.R.L.">
 <link rel="canonical" href="https://zorri.ro/services">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ZORRI">
 <meta property="og:title" content="Services — ZORRI">
-<meta property="og:description" content="All 19 ZORRI offers: advisory hour, expert calls, job-ad and funding checks, AI search visibility audit, AI workflow audit, workshops, sprints and fractional go-to-market.">
+<meta property="og:description" content="ZORRI services in four lines: Research, AI Systems, Strategy &amp; GTM and Strategic Execution. AI orchestration sprints, AI workflow audits, AI governance reviews, research briefs, GTM sprints and fractional go-to-market leadership.">
 <meta property="og:url" content="https://zorri.ro/services">
 <meta property="og:image" content="https://zorri.ro/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -115,10 +115,11 @@
    "@type": "Person",
    "@id": "https://zorri.ro/about#ligia-adam",
    "name": "Ligia Adam",
-   "jobTitle": "Founder",
+   "jobTitle": "Founder, Company Administrator and Lead",
    "worksFor": {
     "@id": "https://zorri.ro/#org"
    },
+   "description": "Manages and represents ZORRI; senior professional with 15+ years at the intersection of digital technology and communication. ZORRI also operates ReLoop.me, its own capability intelligence product, in public beta.",
    "url": "https://zorri.ro/about",
    "email": "hello@zorri.ro",
    "sameAs": [
@@ -195,7 +196,7 @@
    "@id": "https://zorri.ro/services#page",
    "url": "https://zorri.ro/services",
    "name": "Services — ZORRI",
-   "description": "All 19 ZORRI offers: advisory hour, expert calls, job-ad and funding checks, AI search visibility audit, AI workflow audit, workshops, sprints and fractional go-to-market.",
+   "description": "ZORRI services in four lines: Research, AI Systems, Strategy & GTM and Strategic Execution. AI orchestration sprints, AI workflow audits, AI governance reviews, research briefs, GTM sprints and fractional go-to-market leadership.",
    "isPartOf": {
     "@id": "https://zorri.ro/#website"
    },
@@ -228,213 +229,302 @@
    "name": "ZORRI services",
    "itemListElement": [
     {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#advisory-hour",
-     "name": "Advisory Hour",
-     "description": "One hour on an AI build, a governance question, a funding call or a go-to-market decision, with written notes after.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#advisory-hour",
-     "availability": "https://schema.org/InStock"
+     "@type": "OfferCatalog",
+     "@id": "https://zorri.ro/services#research",
+     "name": "Research",
+     "description": "From grants worth applying to, to deep market positioning: how to find, define and deepen your moat.",
+     "itemListElement": [
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#market-intel",
+       "url": "https://zorri.ro/services#market-intel",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "Market and competitive intelligence",
+        "description": "Who your buyers are, who you're up against and what makes you hard to replace, researched for insight and opportunity.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#capability-intel",
+       "url": "https://zorri.ro/services#capability-intel",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "Capability intelligence",
+        "description": "Our niche, built on ReLoop.me: a neutral read of professional capability in CVs and job descriptions, for skills-based hiring and nonlinear careers.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#funding",
+       "url": "https://zorri.ro/services#funding",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "Funding support",
+        "description": "From EU projects and grants to investor decks: we find the right money, check you can get it, and build the case.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      }
+     ]
     },
     {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#expert-call",
-     "name": "Expert Call",
-     "description": "Expert input on AI products, HR tech and skills-based hiring, EU pay transparency, B2B tech go-to-market and the CEE market.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#expert-call",
-     "availability": "https://schema.org/InStock"
+     "@type": "OfferCatalog",
+     "@id": "https://zorri.ro/services#strategy-gtm",
+     "name": "Strategy & GTM",
+     "description": "Positioning, differentiation, pricing and go-to-market execution for technology products.",
+     "itemListElement": [
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#positioning",
+       "url": "https://zorri.ro/services#positioning",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "Positioning Workshop",
+        "description": "A one-day working session that ends with a positioning statement, category choice and messaging your team agrees on.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#gtm-sprint",
+       "url": "https://zorri.ro/services#gtm-sprint",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "GTM Sprint",
+        "description": "Positioning and messaging, a category and competitor map, a pricing and channel plan, and a launch plan.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#launch-programme",
+       "url": "https://zorri.ro/services#launch-programme",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "Product Launch Programme",
+        "description": "Research, positioning, product marketing and launch execution in one engagement, run with your team.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#geo-audit",
+       "url": "https://zorri.ro/services#geo-audit",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "AI Search Visibility Audit",
+        "description": "How ChatGPT, Claude, Perplexity and Google's AI answers describe your company today, and the fixes: structured data, llms.txt, content and category language.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#ar-readiness",
+       "url": "https://zorri.ro/services#ar-readiness",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "Analyst Relations Readiness",
+        "description": "The analysts who matter for your category, what they expect, and briefing materials ready for the first conversations.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#fractional",
+       "url": "https://zorri.ro/services#fractional",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "Fractional CMO",
+        "description": "Four days a month owning positioning, analyst relations, demand generation or launches alongside your team.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      }
+     ]
     },
     {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#job-ad-check",
-     "name": "Job-Ad Pay Transparency Check",
-     "description": "Up to three job ads read against Directive (EU) 2023/970: what is missing, what reads as biased, and a corrected version.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#job-ad-check",
-     "availability": "https://schema.org/InStock"
+     "@type": "OfferCatalog",
+     "@id": "https://zorri.ro/services#ai-systems",
+     "name": "AI Systems",
+     "description": "Design, orchestrate and validate AI workflows that solve real operational problems, from AI agents to deterministic pipelines.",
+     "itemListElement": [
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#ai-opportunity",
+       "url": "https://zorri.ro/services#ai-opportunity",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "AI Opportunity Assessment",
+        "description": "A structured look across your operations to find, size and prioritise the workflows worth automating first.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#workflow-audit",
+       "url": "https://zorri.ro/services#workflow-audit",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "AI Workflow Audit",
+        "description": "An existing AI workflow tested for consistency and failure modes: repeat-run tests, edge cases, where it can ship a wrong answer, and what to fix first.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#workshop",
+       "url": "https://zorri.ro/services#workshop",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "AI Adoption Workshop",
+        "description": "Where AI helps in your workflows, what to automate first, what not to trust, and a 30-day plan.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#orchestration",
+       "url": "https://zorri.ro/services#orchestration",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "AI Orchestration Sprint",
+        "description": "One production AI workflow with versioned prompts, schema-checked output and a quality gate that fails closed, plus documentation and handover.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#governance",
+       "url": "https://zorri.ro/services#governance",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "AI Governance Review",
+        "description": "An AI system mapped against the EU AI Act and GDPR: risk classification, provider or deployer role, documentation gaps and what to fix first. Not legal advice.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#automations",
+       "url": "https://zorri.ro/services#automations",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "Ready-made AI Automations",
+        "description": "AI automations for recurring tasks, such as building accounting or stock documents from a spreadsheet, licensed and set up for your company.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      }
+     ]
     },
     {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#funding-check",
-     "name": "Funding Eligibility Check",
-     "description": "Is your company and project eligible for a specific call? A yes or no with the reasons, the gaps and what it would take.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#funding-check",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#geo-audit",
-     "name": "AI Search Visibility Audit",
-     "description": "How ChatGPT, Claude, Perplexity and Google's AI answers describe your company today, and the fixes: structured data, llms.txt, content and category language.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#geo-audit",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#talk",
-     "name": "Talk or Training Session",
-     "description": "A talk or hands-on session on AI orchestration, AI governance, EU pay transparency or B2B go-to-market.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#talk",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#workflow-audit",
-     "name": "AI Workflow Audit",
-     "description": "An existing AI workflow tested for consistency and failure modes: repeat-run tests, edge cases, where it can ship a wrong answer, and what to fix first.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#workflow-audit",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#workshop",
-     "name": "AI Adoption Workshop",
-     "description": "Where AI helps in your workflows, what to automate first, what not to trust, and a 30-day plan.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#workshop",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#positioning",
-     "name": "Positioning Workshop",
-     "description": "A one-day working session that ends with a positioning statement, category choice and messaging your team agrees on.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#positioning",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#governance",
-     "name": "AI Governance Review",
-     "description": "An AI system mapped against the EU AI Act and GDPR: risk classification, provider or deployer role, documentation gaps and what to fix first. Not legal advice.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#governance",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#research-brief",
-     "name": "Research Brief",
-     "description": "One market, labour-market or competitor question, answered with sources and a written brief.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#research-brief",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#ar-readiness",
-     "name": "Analyst Relations Readiness",
-     "description": "The analysts who matter for your category, what they expect, and briefing materials ready for the first conversations.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#ar-readiness",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#pay-sprint",
-     "name": "Pay Transparency Readiness Sprint",
-     "description": "An audit of up to 15 job ads and the pay practice behind them, a written pay-range justification per role, a gap list against Directive (EU) 2023/970, and a readout. Not legal advice.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#pay-sprint",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#orchestration",
-     "name": "AI Orchestration Sprint",
-     "description": "One production AI workflow with versioned prompts, schema-checked output and a quality gate that fails closed, plus documentation and handover.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#orchestration",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#fractional",
-     "name": "Fractional GTM Lead",
-     "description": "Four days a month owning positioning, analyst relations, demand generation or launches alongside your team.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#fractional",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#gtm-sprint",
-     "name": "GTM Sprint",
-     "description": "Positioning and messaging, a category and competitor map, a pricing and channel plan, and a launch plan.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#gtm-sprint",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#external-pm",
-     "name": "External Project Management",
-     "description": "Ongoing project management and hand-holding across research, AI builds and launches: planning, vendors, weekly check-ins and reporting.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#external-pm",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#funding-support",
-     "name": "Funding Application Support",
-     "description": "Eligibility check, project design and work plan, budget logic and indicators, and the application file ready to submit. No outcome is guaranteed.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#funding-support",
-     "availability": "https://schema.org/InStock"
-    },
-    {
-     "@type": "Offer",
-     "@id": "https://zorri.ro/services#automations",
-     "name": "Ready-made AI Automations",
-     "description": "AI automations for recurring tasks, such as building accounting or stock documents from a spreadsheet, licensed and set up for your company.",
-     "seller": {
-      "@id": "https://zorri.ro/#org"
-     },
-     "url": "https://zorri.ro/services#automations",
-     "availability": "https://schema.org/InStock"
+     "@type": "OfferCatalog",
+     "@id": "https://zorri.ro/services#execution",
+     "name": "Strategic Execution",
+     "description": "Advice, project management and hands-on delivery that join research, AI and go-to-market into one engagement.",
+     "itemListElement": [
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#advisory-hour",
+       "url": "https://zorri.ro/services#advisory-hour",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "Advisory Hour",
+        "description": "One hour on an AI build, a governance question, a funding call or a go-to-market decision, with written notes after.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#expert-call",
+       "url": "https://zorri.ro/services#expert-call",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "Expert Call",
+        "description": "Expert input on AI products, HR tech and skills-based hiring, EU pay transparency, B2B tech go-to-market and the CEE market.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#talk",
+       "url": "https://zorri.ro/services#talk",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "Talk or Training Session",
+        "description": "A talk or hands-on session on AI orchestration, AI governance, EU pay transparency or B2B go-to-market.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      },
+      {
+       "@type": "Offer",
+       "@id": "https://zorri.ro/services#external-pm",
+       "url": "https://zorri.ro/services#external-pm",
+       "itemOffered": {
+        "@type": "Service",
+        "name": "External Project Management",
+        "description": "Ongoing project management and hand-holding across research, AI builds and launches: planning, vendors, weekly check-ins and reporting.",
+        "provider": {
+         "@id": "https://zorri.ro/#org"
+        },
+        "areaServed": "EU"
+       }
+      }
+     ]
     }
    ]
   },
@@ -444,10 +534,10 @@
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "How do I buy one of these?",
+     "name": "How do I start?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Email us (hello at zorri.ro) with the offer name and a few lines about your situation. You get a short written scope and quote, and work starts once you confirm."
+      "text": "Email a few lines about what you need, or the name of a service. You get a reply within 2 working days and a free 30-minute call, then a written scope and quote. Work starts once you confirm."
      }
     },
     {
@@ -460,10 +550,18 @@
     },
     {
      "@type": "Question",
-     "name": "Can you combine offers?",
+     "name": "Can we start small?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Many projects start with a small offer, such as an audit or a check, and continue into a sprint once the scope is clear."
+      "text": "Yes. Many projects start with a focused engagement, such as an audit or a research brief, and continue into a sprint or an ongoing partnership once the scope is clear."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is the governance and pay transparency work legal advice?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It is operational readiness: classification, gaps and what to fix. Where you need a legal opinion, we work alongside your lawyers."
      }
     },
     {
@@ -471,7 +569,7 @@
      "name": "Do you work outside Romania?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. ZORRI works with clients across the European Union, in English and Romanian, remotely or in person in Bucharest."
+      "text": "Yes. ZORRI works with clients across the European Union, in English and Romanian, remotely or in person, based on availability."
      }
     }
    ]
@@ -493,143 +591,157 @@
  <div class="wrap ph-grid">
  <div class="ph-text">
   <p class="label">Services</p>
-  <h1>Every way to work with ZORRI</h1>
-  <p class="line">Fixed scope, agreed before we start.</p>
-  <p class="lead">19 ways to work with ZORRI across AI systems, research and go-to-market. Pick one, email us its name, and you'll get a short written scope before anything starts.</p>
+  <h1 class="one-line">How we can help</h1>
+  <p class="lead">From understanding the opportunity to building the system and taking it to market, ZORRI gives you senior thinking and hands-on execution: one team that works as an extension of yours.</p>
+  <p class="section-cta"><a class="button button-sun" href="#contact" data-mail="Working with ZORRI" data-mail-user="ligia">Get in touch</a></p>
  </div>
  <figure class="ph-img"><img src="/assets/img/steps.jpg" alt="The word Steps circled on a printed page" width="1200" height="800"></figure>
  </div>
 </div>
 
-<section class="section block-white" aria-labelledby="cat-h">
+<section class="section block-white" aria-labelledby="choose-h">
  <div class="wrap">
-  <h2 id="cat-h" class="label">All offers</h2>
-  <table class="catalogue">
-   <thead><tr><th scope="col">Offer</th><th scope="col" class="prac">Practice</th><th scope="col">Format</th></tr></thead>
-   <tbody>
-    <tr id="advisory-hour" class="p-all">
-     <td><span class="name">Advisory Hour</span><span class="desc">One hour on an AI build, a governance question, a funding call or a go-to-market decision, with written notes after.</span></td>
-     <td class="prac">All practices</td>
-     <td class="price"><span class="label" style="display:inline">per hour</span></td>
-    </tr>
-    <tr id="expert-call" class="p-research">
-     <td><span class="name">Expert Call</span><span class="desc">Expert input on AI products, HR tech and skills-based hiring, EU pay transparency, B2B tech go-to-market and the CEE market.</span></td>
-     <td class="prac"><a href="/research">Research</a></td>
-     <td class="price"><span class="label" style="display:inline">per hour</span></td>
-    </tr>
-    <tr id="job-ad-check" class="p-research">
-     <td><span class="name">Job-Ad Pay Transparency Check</span><span class="desc">Up to three job ads read against Directive (EU) 2023/970: what is missing, what reads as biased, and a corrected version.</span></td>
-     <td class="prac"><a href="/research">Research</a></td>
-     <td class="price"><span class="label" style="display:inline">up to 3 job ads</span></td>
-    </tr>
-    <tr id="funding-check" class="p-research">
-     <td><span class="name">Funding Eligibility Check</span><span class="desc">Is your company and project eligible for a specific call? A yes or no with the reasons, the gaps and what it would take.</span></td>
-     <td class="prac"><a href="/research">Research</a></td>
-     <td class="price"><span class="label" style="display:inline">per call</span></td>
-    </tr>
-    <tr id="geo-audit" class="p-gtm">
-     <td><span class="name">AI Search Visibility Audit</span><span class="desc">How ChatGPT, Claude, Perplexity and Google's AI answers describe your company today, and the fixes: structured data, llms.txt, content and category language.</span></td>
-     <td class="prac"><a href="/go-to-market">Strategy & GTM</a></td>
-     <td class="price"><span class="label" style="display:inline">per website</span></td>
-    </tr>
-    <tr id="talk" class="p-all">
-     <td><span class="name">Talk or Training Session</span><span class="desc">A talk or hands-on session on AI orchestration, AI governance, EU pay transparency or B2B go-to-market.</span></td>
-     <td class="prac">All practices</td>
-     <td class="price"><span class="label" style="display:inline">per session</span></td>
-    </tr>
-    <tr id="workflow-audit" class="p-ai">
-     <td><span class="name">AI Workflow Audit</span><span class="desc">An existing AI workflow tested for consistency and failure modes: repeat-run tests, edge cases, where it can ship a wrong answer, and what to fix first.</span></td>
-     <td class="prac"><a href="/ai-systems">AI orchestration</a></td>
-     <td class="price"><span class="label" style="display:inline">per workflow</span></td>
-    </tr>
-    <tr id="workshop" class="p-ai">
-     <td><span class="name">AI Adoption Workshop</span><span class="desc">Where AI helps in your workflows, what to automate first, what not to trust, and a 30-day plan.</span></td>
-     <td class="prac"><a href="/ai-systems">AI orchestration</a></td>
-     <td class="price"><span class="label" style="display:inline">half day or full day</span></td>
-    </tr>
-    <tr id="positioning" class="p-gtm">
-     <td><span class="name">Positioning Workshop</span><span class="desc">A one-day working session that ends with a positioning statement, category choice and messaging your team agrees on.</span></td>
-     <td class="prac"><a href="/go-to-market">Strategy & GTM</a></td>
-     <td class="price"><span class="label" style="display:inline">one day</span></td>
-    </tr>
-    <tr id="governance" class="p-ai">
-     <td><span class="name">AI Governance Review</span><span class="desc">An AI system mapped against the EU AI Act and GDPR: risk classification, provider or deployer role, documentation gaps and what to fix first. Not legal advice.</span></td>
-     <td class="prac"><a href="/ai-systems">AI orchestration</a></td>
-     <td class="price"><span class="label" style="display:inline">per system</span></td>
-    </tr>
-    <tr id="research-brief" class="p-research">
-     <td><span class="name">Research Brief</span><span class="desc">One market, labour-market or competitor question, answered with sources and a written brief.</span></td>
-     <td class="prac"><a href="/research">Research</a></td>
-     <td class="price"><span class="label" style="display:inline">per question</span></td>
-    </tr>
-    <tr id="ar-readiness" class="p-gtm">
-     <td><span class="name">Analyst Relations Readiness</span><span class="desc">The analysts who matter for your category, what they expect, and briefing materials ready for the first conversations.</span></td>
-     <td class="prac"><a href="/go-to-market">Strategy & GTM</a></td>
-     <td class="price"><span class="label" style="display:inline">per programme</span></td>
-    </tr>
-    <tr id="pay-sprint" class="p-research">
-     <td><span class="name">Pay Transparency Readiness Sprint</span><span class="desc">An audit of up to 15 job ads and the pay practice behind them, a written pay-range justification per role, a gap list against Directive (EU) 2023/970, and a readout. Not legal advice.</span></td>
-     <td class="prac"><a href="/research">Research</a></td>
-     <td class="price"><span class="label" style="display:inline">2 weeks</span></td>
-    </tr>
-    <tr id="orchestration" class="p-ai">
-     <td><span class="name">AI Orchestration Sprint</span><span class="desc">One production AI workflow with versioned prompts, schema-checked output and a quality gate that fails closed, plus documentation and handover.</span></td>
-     <td class="prac"><a href="/ai-systems">AI orchestration</a></td>
-     <td class="price"><span class="label" style="display:inline">2 weeks</span></td>
-    </tr>
-    <tr id="fractional" class="p-gtm">
-     <td><span class="name">Fractional GTM Lead</span><span class="desc">Four days a month owning positioning, analyst relations, demand generation or launches alongside your team.</span></td>
-     <td class="prac"><a href="/go-to-market">Strategy & GTM</a></td>
-     <td class="price"><span class="label" style="display:inline">per month, 4 days</span></td>
-    </tr>
-    <tr id="gtm-sprint" class="p-gtm">
-     <td><span class="name">GTM Sprint</span><span class="desc">Positioning and messaging, a category and competitor map, a pricing and channel plan, and a launch plan.</span></td>
-     <td class="prac"><a href="/go-to-market">Strategy & GTM</a></td>
-     <td class="price"><span class="label" style="display:inline">2–4 weeks</span></td>
-    </tr>
-    <tr id="external-pm" class="p-all">
-     <td><span class="name">External Project Management</span><span class="desc">Ongoing project management and hand-holding across research, AI builds and launches: planning, vendors, weekly check-ins and reporting.</span></td>
-     <td class="prac">All practices</td>
-     <td class="price"><span class="label" style="display:inline">monthly retainer</span></td>
-    </tr>
-    <tr id="funding-support" class="p-research">
-     <td><span class="name">Funding Application Support</span><span class="desc">Eligibility check, project design and work plan, budget logic and indicators, and the application file ready to submit. No outcome is guaranteed.</span></td>
-     <td class="prac"><a href="/research">Research</a></td>
-     <td class="price"><span class="label" style="display:inline">scoped per call</span></td>
-    </tr>
-    <tr id="automations" class="p-ai">
-     <td><span class="name">Ready-made AI Automations</span><span class="desc">AI automations for recurring tasks, such as building accounting or stock documents from a spreadsheet, licensed and set up for your company.</span></td>
-     <td class="prac"><a href="/ai-systems">AI orchestration</a></td>
-     <td class="price"><span class="label" style="display:inline">licensed per company</span></td>
-    </tr>
-   </tbody>
-  </table>
-  <p class="note">Every engagement is scoped and quoted in writing before work starts. ZORRI is not a VAT payer, so quotes are final, with no VAT added.</p>
+  <div class="section-head">
+   <h2 id="choose-h">Where we do our best work</h2>
+   <p>Research · Strategy &amp; GTM · AI Systems · Execution</p>
+  </div>
+  <ul class="lines-nav">
+   <li><a href="#research"><span class="stage">Research</span><strong>Validate before investing.</strong><span class="more">See services</span></a></li>
+   <li><a href="#strategy-gtm"><span class="stage">Strategy &amp; GTM</span><strong>Position and commercialise.</strong><span class="more">See services</span></a></li>
+   <li><a href="#ai-systems"><span class="stage">AI Systems</span><strong>Build and automate.</strong><span class="more">See services</span></a></li>
+   <li><a href="#execution"><span class="stage">Strategic Execution</span><strong>Get the work delivered.</strong><span class="more">See services</span></a></li>
+  </ul>
  </div>
 </section>
 
-<section class="section block-panel" aria-labelledby="faq-h">
+<section class="section block-panel" id="research" aria-labelledby="research-h">
+ <div class="wrap line-grid">
+  <div class="line-head">
+   <p class="stage">Research</p>
+   <h2 id="research-h">Know what to really focus on.</h2>
+   <p>From grants worth applying to, to deep market positioning: how to find, define and deepen your moat.</p>
+  </div>
+  <div class="line-offers">
+   <details class="svc" id="market-intel">
+    <summary><span class="svc-name">Market and competitive intelligence</span><span class="svc-sum">Who your buyers are, who you're up against and what makes you hard to replace, researched for insight and opportunity.</span></summary>
+    <div class="svc-body">
+     <dl>
+      <div><dt>Who it's for</dt><dd>Decisions that need evidence first.</dd></div>
+      <div><dt>Engagement</dt><dd>Per question or 2–4 weeks</dd></div>
+     </dl>
+     <p class="svc-h">What we help with</p>
+     <ul><li>Market and customer research</li><li>Competitor and substitute mapping</li><li>Your moat, defined and stress-tested</li></ul>
+     <p class="section-cta"><a class="more" href="#contact" data-mail="Enquiry: Market and competitive intelligence">Ask about this</a></p>
+    </div>
+   </details>
+   <details class="svc" id="capability-intel">
+    <summary><span class="svc-name">Capability intelligence</span><span class="svc-sum">Our niche, built on ReLoop.me: a neutral read of professional capability in CVs and job descriptions, for skills-based hiring and nonlinear careers.</span></summary>
+    <div class="svc-body">
+     <dl>
+      <div><dt>Who it's for</dt><dd>Employers, recruiters and HR tech platforms.</dd></div>
+      <div><dt>Engagement</dt><dd>Per project or via ReLoop.me</dd></div>
+     </dl>
+     <p class="svc-h">What we help with</p>
+     <ul><li>EU pay transparency readiness (Directive (EU) 2023/970), not legal advice</li><li>Job-ad checks for missing pay ranges and biased wording</li><li>Role Intel and Profile Intel reports, through <a href="https://reloop.me">ReLoop.me</a></li><li>The ReLoop.me API and MCP server for platforms, at <a href="https://api.reloop.me/">api.reloop.me</a></li><li>Capability and skills research for hiring decisions</li></ul>
+     <p class="section-cta"><a class="more" href="#contact" data-mail="Enquiry: Capability intelligence">Ask about this</a></p>
+    </div>
+   </details>
+   <details class="svc" id="funding">
+    <summary><span class="svc-name">Funding support</span><span class="svc-sum">From EU projects and grants to investor decks: we find the right money, check you can get it, and build the case.</span></summary>
+    <div class="svc-body">
+     <dl>
+      <div><dt>Who it's for</dt><dd>Companies raising public or private money.</dd></div>
+      <div><dt>Engagement</dt><dd>Scoped per call or round</dd></div>
+     </dl>
+     <p class="svc-h">What we help with</p>
+     <ul><li>Eligibility checks for EU and national calls</li><li>Grant and EU project applications, from design to submission</li><li>Investor decks and the narrative behind them</li></ul>
+     <p class="section-cta"><a class="more" href="#contact" data-mail="Enquiry: Funding support">Ask about this</a></p>
+    </div>
+   </details>
+   <p class="section-cta"><a class="button button-line" href="#contact" data-mail="Discuss a research question">Discuss a research question</a></p>
+  </div>
+ </div>
+</section>
+<section class="section block-white" id="strategy-gtm" aria-labelledby="strategy-gtm-h">
+ <div class="wrap line-grid">
+  <div class="line-head">
+   <p class="stage">Strategy &amp; GTM</p>
+   <h2 id="strategy-gtm-h">Build a market position that sells.</h2>
+   <p>Positioning, differentiation, pricing and go-to-market execution for technology products.</p>
+  </div>
+  <div class="line-offers">
+   <ul class="cloud"><li class="w3">Positioning and category design</li><li class="w3">Go-to-market strategy</li><li class="w2">Product launches</li><li class="w1">Pricing and packaging</li><li class="w2">AI search visibility (GEO)</li><li class="w1">Analyst relations</li><li class="w2">Demand generation</li><li class="w3">Fractional CMO</li></ul>
+   <p class="section-cta"><a class="button button-line" href="#contact" data-mail="Discuss a launch">Discuss a launch</a></p>
+  </div>
+ </div>
+</section>
+<section class="section block-panel" id="ai-systems" aria-labelledby="ai-systems-h">
+ <div class="wrap line-grid">
+  <div class="line-head">
+   <p class="stage">AI Systems</p>
+   <h2 id="ai-systems-h">Turn AI potential into working systems.</h2>
+   <p>Design, orchestrate and validate AI workflows that solve real operational problems, from AI agents to deterministic pipelines.</p>
+  </div>
+  <div class="line-offers">
+   <ul class="cloud"><li class="w3">LLM pipelines and agents</li><li class="w2">AI opportunity and workflow audits</li><li class="w2">Deterministic automations</li><li class="w1">Evaluation and quality gates</li><li class="w1">APIs and MCP servers</li><li class="w3">AI governance (EU AI Act, GDPR)</li><li class="w1">Team workshops</li><li class="w1">Ready-made automations</li></ul>
+   <p class="section-cta"><a class="button button-line" href="#contact" data-mail="Discuss an AI workflow">Discuss an AI workflow</a></p>
+  </div>
+ </div>
+</section>
+<section class="section block-white" id="execution" aria-labelledby="execution-h">
+ <div class="wrap line-grid">
+  <div class="line-head">
+   <p class="stage">Strategic Execution</p>
+   <h2 id="execution-h">Senior expertise, extended.</h2>
+   <p>Advice, project management and hands-on delivery that join research, AI and go-to-market into one engagement.</p>
+  </div>
+  <div class="line-offers">
+   <ul class="cloud"><li class="w3">External project management</li><li class="w2">Advisory and expert calls</li><li class="w1">Talks and workshops</li><li class="w1">Vendor coordination</li><li class="w2">Board and investor reporting</li><li class="w3">Interim and fractional roles</li></ul>
+   <p class="section-cta"><a class="button button-line" href="#contact" data-mail="Discuss your project">Discuss your project</a></p>
+  </div>
+ </div>
+</section>
+
+<section class="section block-panel" aria-labelledby="feat-h">
  <div class="wrap">
   <div class="section-head">
-   <p class="label">Questions</p>
-   <h2 id="faq-h">Buying from ZORRI</h2>
+   <h2 id="feat-h">Featured engagements</h2>
+   <p>The engagements most clients start with.</p>
+  </div>
+  <ul class="quick featured">
+   <li><span class="stage">Research</span><h3><a href="#funding">Funding support</a></h3><p>From EU projects and grants to investor decks: we find the right money, check you can get it, and build the case.</p><p class="label">scoped per call or round</p></li>
+   <li><span class="stage">Strategy &amp; GTM</span><h3><a href="#strategy-gtm">GTM Sprint</a></h3><p>Positioning and messaging, a category and competitor map, a pricing and channel plan, and a launch plan.</p><p class="label">2–4 weeks</p></li>
+   <li><span class="stage">AI Systems</span><h3><a href="#ai-systems">AI Orchestration Sprint</a></h3><p>One production AI workflow with versioned prompts, schema-checked output and a quality gate that fails closed, plus documentation and handover.</p><p class="label">2 weeks</p></li>
+   <li><span class="stage">Ongoing partnership</span><h3><a href="#strategy-gtm">Fractional CMO</a></h3><p>Four days a month owning positioning, analyst relations, demand generation or launches alongside your team.</p><p class="label">per month, 4 days</p></li>
+  </ul>
+ </div>
+</section>
+
+<section class="section block-white" aria-labelledby="faq-h">
+ <div class="wrap">
+  <div class="section-head">
+   <h2 id="faq-h">Working with ZORRI</h2>
   </div>
   <div class="faq">
   <details>
-   <summary>How do I buy one of these?</summary>
-   <div><p>Email us (hello at zorri.ro) with the offer name and a few lines about your situation. You get a short written scope and quote, and work starts once you confirm.</p></div>
+   <summary>How do I start?</summary>
+   <div><p>Email a few lines about what you need, or the name of a service. You get a reply within 2 working days and a free 30-minute call, then a written scope and quote. Work starts once you confirm.</p></div>
   </details>
   <details>
    <summary>How is an engagement quoted?</summary>
    <div><p>Every engagement is scoped and quoted in writing before work starts. ZORRI is not a VAT payer, so quotes are final, with no VAT added.</p></div>
   </details>
   <details>
-   <summary>Can you combine offers?</summary>
-   <div><p>Yes. Many projects start with a small offer, such as an audit or a check, and continue into a sprint once the scope is clear.</p></div>
+   <summary>Can we start small?</summary>
+   <div><p>Yes. Many projects start with a focused engagement, such as an audit or a research brief, and continue into a sprint or an ongoing partnership once the scope is clear.</p></div>
+  </details>
+  <details>
+   <summary>Is the governance and pay transparency work legal advice?</summary>
+   <div><p>No. It is operational readiness: classification, gaps and what to fix. Where you need a legal opinion, we work alongside your lawyers.</p></div>
   </details>
   <details>
    <summary>Do you work outside Romania?</summary>
-   <div><p>Yes. ZORRI works with clients across the European Union, in English and Romanian, remotely or in person in Bucharest.</p></div>
+   <div><p>Yes. ZORRI works with clients across the European Union, in English and Romanian, remotely or in person, based on availability.</p></div>
   </details>
   </div>
  </div>
@@ -637,9 +749,9 @@
 
 <section class="contact" id="contact" aria-labelledby="contact-h">
  <div class="wrap">
-  <h2 id="contact-h">Found the one you need?</h2>
-  <p>Email its name and a few lines about your situation.</p>
-  <a class="button" href="#contact" data-mail="Offer%20enquiry">Email us</a>
+  <h2 id="contact-h">Not sure what you need?</h2>
+  <p>Start with a conversation. We'll help find the problem and the right next step.</p>
+  <a class="button" href="#contact" data-mail="Project enquiry">Email us</a>
  </div>
 </section>
 </main>
@@ -658,8 +770,8 @@
  </div>
 </footer>
 <script>
-(function(){var u="hello",d="zorri"+"."+"ro";document.querySelectorAll("a[data-mail]").forEach(function(a){var s=a.getAttribute("data-mail");a.href="mai"+"lto:"+u+"@"+d+(s?"?subject="+encodeURIComponent(s):"");});})();
+(function(){var d="zorri"+"."+"ro";document.querySelectorAll("a[data-mail]").forEach(function(a){var u=a.getAttribute("data-mail-user")||"hello",s=a.getAttribute("data-mail");a.href="mai"+"lto:"+u+"@"+d+(s?"?subject="+encodeURIComponent(s):"");});})();
 </script>
 </body>
 </html>
-<!-- ZORRI /services — VERSION 4.0.0 END -->
+<!-- ZORRI /services — VERSION 4.2.0 END -->
