@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<!-- ZORRI /ai-systems — VERSION 4.0.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI orchestration and governance — ZORRI</title>
+<meta name="description" content="AI orchestration, evaluation and governance: AI workflow audits, production AI workflows with fail-closed quality gates, EU AI Act and GDPR reviews, workshops and ready-made automations.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="Ligia Adam, ZORRI S.R.L.">
+<link rel="canonical" href="https://zorri.ro/ai-systems">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/zorri-logo.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ZORRI">
+<meta property="og:title" content="AI orchestration and governance — ZORRI">
+<meta property="og:description" content="AI orchestration, evaluation and governance: AI workflow audits, production AI workflows with fail-closed quality gates, EU AI Act and GDPR reviews, workshops and ready-made automations.">
+<meta property="og:url" content="https://zorri.ro/ai-systems">
+<meta property="og:image" content="https://zorri.ro/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/zorri.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Organization",
+    "ProfessionalService"
+   ],
+   "@id": "https://zorri.ro/#org",
+   "name": "ZORRI",
+   "legalName": "ZORRI S.R.L.",
+   "alternateName": "ZORRI SRL",
+   "slogan": "Ideas, made happen.",
+   "url": "https://zorri.ro/",
+   "logo": "https://zorri.ro/assets/zorri-logo.png",
+   "image": "https://zorri.ro/assets/og.png",
+   "email": "hello@zorri.ro",
+   "description": "ZORRI is a studio at the intersection of AI systems design, B2B marketing and strategy, based in Bucharest, Romania. It designs and governs AI systems, delivers market intelligence, research and consulting (including EU funding support and EU pay transparency readiness), and takes AI and B2B technology products to market. ZORRI builds and operates ReLoop.me.",
+   "taxID": "55137499",
+   "identifier": [
+    {
+     "@type": "PropertyValue",
+     "propertyID": "CUI",
+     "value": "55137499"
+    },
+    {
+     "@type": "PropertyValue",
+     "propertyID": "Trade Register number",
+     "value": "J2026042991009"
+    },
+    {
+     "@type": "PropertyValue",
+     "propertyID": "EUID",
+     "value": "ROONRC.J2026042991009"
+    },
+    {
+     "@type": "PropertyValue",
+     "propertyID": "EU PIC",
+     "value": "860469832"
+    }
+   ],
+   "foundingDate": "2026",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bucharest",
+    "addressCountry": "RO"
+   },
+   "areaServed": "European Union",
+   "knowsLanguage": [
+    "en",
+    "ro"
+   ],
+   "founder": {
+    "@id": "https://zorri.ro/about#ligia-adam"
+   },
+   "owns": {
+    "@id": "https://reloop.me/#product"
+   },
+   "sameAs": [
+    "https://reloop.me"
+   ],
+   "knowsAbout": [
+    "AI orchestration",
+    "LLM evaluation",
+    "AI governance",
+    "EU AI Act",
+    "EU Pay Transparency Directive 2023/970",
+    "GDPR",
+    "B2B go-to-market strategy",
+    "positioning",
+    "category design",
+    "industry analyst relations",
+    "customer reference programmes",
+    "demand generation",
+    "SEO and GEO",
+    "EU funds project management",
+    "labour-market intelligence",
+    "skills-based hiring",
+    "n8n",
+    "LLM workflows",
+    "market research",
+    "EU funding applications"
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://zorri.ro/about#ligia-adam",
+   "name": "Ligia Adam",
+   "jobTitle": "Founder",
+   "worksFor": {
+    "@id": "https://zorri.ro/#org"
+   },
+   "url": "https://zorri.ro/about",
+   "email": "hello@zorri.ro",
+   "sameAs": [
+    "https://www.linkedin.com/in/ligiaadam",
+    "https://github.com/LigiaAdam"
+   ],
+   "nationality": "Romania",
+   "homeLocation": {
+    "@type": "Place",
+    "name": "Bucharest, Romania"
+   },
+   "knowsLanguage": [
+    "ro",
+    "en",
+    "fr"
+   ],
+   "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "SNSPA, National University of Political Studies and Public Administration, Bucharest"
+   },
+   "award": [
+    "Forbes 30 Under 30 Romania 2018 (CivicTech Romania team)",
+    "Forbes Tech Top 100 Women Entrepreneurs in Europe to Follow 2018"
+   ],
+   "knowsAbout": [
+    "AI orchestration",
+    "LLM evaluation",
+    "AI governance",
+    "EU AI Act",
+    "EU Pay Transparency Directive 2023/970",
+    "GDPR",
+    "B2B go-to-market strategy",
+    "positioning",
+    "category design",
+    "industry analyst relations",
+    "customer reference programmes",
+    "demand generation",
+    "SEO and GEO",
+    "EU funds project management",
+    "labour-market intelligence",
+    "skills-based hiring"
+   ]
+  },
+  {
+   "@type": [
+    "Product",
+    "SoftwareApplication"
+   ],
+   "@id": "https://reloop.me/#product",
+   "name": "ReLoop.me",
+   "url": "https://reloop.me",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Web",
+   "brand": {
+    "@id": "https://zorri.ro/#org"
+   },
+   "manufacturer": {
+    "@id": "https://zorri.ro/#org"
+   },
+   "description": "Capability intelligence platform for nonlinear careers and skills-based hiring. Profile Intel reads a CV; Role Intel reads a job description. Built and operated by ZORRI S.R.L."
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://zorri.ro/#website",
+   "url": "https://zorri.ro/",
+   "name": "ZORRI",
+   "publisher": {
+    "@id": "https://zorri.ro/#org"
+   },
+   "inLanguage": "en"
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://zorri.ro/ai-systems#page",
+   "url": "https://zorri.ro/ai-systems",
+   "name": "AI orchestration and governance — ZORRI",
+   "description": "AI orchestration, evaluation and governance: AI workflow audits, production AI workflows with fail-closed quality gates, EU AI Act and GDPR reviews, workshops and ready-made automations.",
+   "isPartOf": {
+    "@id": "https://zorri.ro/#website"
+   },
+   "about": {
+    "@id": "https://zorri.ro/#org"
+   },
+   "inLanguage": "en",
+   "dateModified": "2026-11-09"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "ZORRI",
+     "item": "https://zorri.ro/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "AI orchestration",
+     "item": "https://zorri.ro/ai-systems"
+    }
+   ]
+  },
+  {
+   "@type": "Service",
+   "@id": "https://zorri.ro/ai-systems#service",
+   "name": "AI systems & governance",
+   "serviceType": "AI orchestration, evaluation and governance",
+   "provider": {
+    "@id": "https://zorri.ro/#org"
+   },
+   "areaServed": "European Union",
+   "url": "https://zorri.ro/ai-systems",
+   "description": "AI pipelines and process automation, custom software and data infrastructure, evaluation and quality assurance of AI outputs, EU AI Act and GDPR governance, AI adoption training and ready-made automations."
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://zorri.ro/ai-systems#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is AI orchestration?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "AI orchestration is the design of a workflow in which one or more AI models, data sources and tools run in a defined order, with checks between the steps. The goal is output you can trust and trace, not a single clever prompt."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What does “fails closed” mean?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "If an output does not pass its checks, the workflow stops instead of passing it on. A wrong answer is held back rather than shipped."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is the AI Governance Review legal advice?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It is a technical and operational review: risk classification, your role under the EU AI Act, documentation gaps and design fixes. Your lawyer can work from it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which tools do you build with?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Large language models (including the Claude API), n8n for orchestration, and integrations with the systems you already use. The choice is agreed during scoping."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How is an engagement quoted?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Every engagement is scoped and quoted in writing before work starts. ZORRI is not a VAT payer, so quotes are final, with no VAT added."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+ <div class="wrap">
+  <a class="brand" href="/" aria-label="ZORRI home"><span class="wm">ZOR<span class="tilt">R</span>I</span></a>
+  <nav class="site-nav" aria-label="Main"><ul><li><a href="/about">About</a></li><li><a href="/services">Services</a></li><li><a href="/#contact">Contact</a></li></ul></nav>
+ </div>
+</header>
+<main id="main">
+<div class="page-head">
+ <div class="wrap ph-grid">
+ <div class="ph-text">
+  <p class="label">Practice</p>
+  <h1>AI orchestration</h1>
+  <p class="line">From AI agents to deterministic workflows.</p>
+  <p class="lead">We build AI agents, pipelines, automation and custom software, from autonomous agents where judgement helps to deterministic workflows where every run must match. Every step is versioned, every output checked, every decision traceable. Then we map them against the EU AI Act and GDPR, so they can be defended as well as used.</p>
+ </div>
+ <figure class="ph-img"><img src="/assets/img/ai.jpg" alt="Keyboard keys A and I showing through torn paper" width="1200" height="800"></figure>
+ </div>
+</div>
+
+<section class="section block-white" aria-labelledby="def-h">
+ <div class="wrap">
+  <div class="section-head">
+   <h2 id="def-h">AI that holds up under scrutiny</h2>
+  </div>
+  <p class="lead">An agent or a workflow holds up under scrutiny when it behaves predictably within the limits you set, stops itself when an output fails a check, and leaves a record of why. Where you need the same answer to the same input every time, we make it deterministic. That is engineering and governance together, and it is what this practice delivers.</p>
+ </div>
+</section>
+
+<section class="section block-panel" aria-labelledby="covers-h">
+ <div class="wrap">
+  <div class="section-head">
+   <h2 id="covers-h">What this covers</h2>
+  </div>
+  <ul class="covers"><li><strong>AI agents, pipelines and automation</strong><span>AI agents, LLM workflows, n8n orchestration and integrations</span></li><li><strong>Custom software and data</strong><span>Portals, data infrastructure and hosted digital assets</span></li><li><strong>Evaluation and quality assurance</strong><span>Repeat-run, regression and adversarial testing of AI outputs</span></li><li><strong>AI governance</strong><span>EU AI Act classification, Art. 25 boundaries, auditability and provenance</span></li><li><strong>Data protection by design</strong><span>GDPR-aware retention, deletion and access</span></li><li><strong>Adoption and training</strong><span>Workshops, talks and capability building for teams</span></li></ul>
+ </div>
+</section>
+
+<section class="section block-white" aria-labelledby="offers-h">
+ <div class="wrap">
+  <div class="section-head">
+   <h2 id="offers-h">Fixed-scope offers</h2>
+  </div>
+  <div class="offers">
+  <article class="offer chip p-all" id="advisory-hour">
+   <div>
+    <h3>Advisory Hour</h3>
+    <div class="terms"><strong>per hour</strong></div>
+   </div>
+   <div>
+    <p>For a founder or team with one sharp question.</p>
+    <ul><li>60-minute video call</li><li>Written notes and next steps within a day</li></ul>
+   </div>
+  </article>
+  <article class="offer chip p-all" id="talk">
+   <div>
+    <h3>Talk or Training Session</h3>
+    <div class="terms"><strong>per session</strong></div>
+   </div>
+   <div>
+    <p>For teams, conferences and programmes.</p>
+    <ul><li>Up to 90 minutes</li><li>Slides and materials to keep</li></ul>
+   </div>
+  </article>
+  <article class="offer chip p-ai" id="workflow-audit">
+   <div>
+    <h3>AI Workflow Audit</h3>
+    <div class="terms"><strong>per workflow</strong></div>
+   </div>
+   <div>
+    <p>For teams already running an AI or n8n workflow.</p>
+    <ul><li>Repeat-run consistency test</li><li>Failure-mode map</li><li>A prioritised fix list</li></ul>
+   </div>
+  </article>
+  <article class="offer chip p-ai" id="workshop">
+   <div>
+    <h3>AI Adoption Workshop</h3>
+    <div class="terms"><strong>half day or full day</strong></div>
+   </div>
+   <div>
+    <p>For a team of up to 15.</p>
+    <ul><li>Where AI helps</li><li>What to automate first</li><li>What not to trust</li><li>A 30-day plan</li></ul>
+   </div>
+  </article>
+  <article class="offer chip p-ai" id="governance">
+   <div>
+    <h3>AI Governance Review</h3>
+    <div class="terms"><strong>per system</strong></div>
+   </div>
+   <div>
+    <p>For teams putting an AI system or use case into production.</p>
+    <ul><li>Risk classification, including Annex III</li><li>Your role and where Art. 25 could change it</li><li>Data protection by design</li><li>A gap list and what to fix first</li></ul>
+   </div>
+  </article>
+  <article class="offer chip p-ai" id="orchestration">
+   <div>
+    <h3>AI Orchestration Sprint</h3>
+    <div class="terms"><strong>2 weeks</strong></div>
+   </div>
+   <div>
+    <p>For one production AI workflow, built end to end.</p>
+    <ul><li>Versioned prompts, so every change can be traced</li><li>Output checked against a schema</li><li>A quality gate that fails closed: an output that fails a check is not sent</li><li>Documentation and handover</li></ul>
+   </div>
+  </article>
+  <article class="offer chip p-all" id="external-pm">
+   <div>
+    <h3>External Project Management</h3>
+    <div class="terms"><strong>monthly retainer</strong></div>
+   </div>
+   <div>
+    <p>For teams that want the work steered, not just delivered.</p>
+    <ul><li>Weekly planning and check-ins</li><li>Vendor and freelancer coordination</li><li>Progress reporting to founders or the board</li></ul>
+   </div>
+  </article>
+  <article class="offer chip p-ai" id="automations">
+   <div>
+    <h3>Ready-made AI Automations</h3>
+    <div class="terms"><strong>licensed per company</strong></div>
+   </div>
+   <div>
+    <p>For companies with recurring back-office paperwork.</p>
+    <ul><li>Set-up in your tools</li><li>Checks before anything is issued</li><li>Licence per company</li></ul>
+   </div>
+  </article>
+  </div>
+  <p class="note">Every engagement is scoped and quoted in writing before work starts. ZORRI is not a VAT payer, so quotes are final, with no VAT added.</p>
+ </div>
+</section>
+
+<section class="section block-panel" aria-labelledby="faq-h">
+ <div class="wrap">
+  <div class="section-head">
+   <h2 id="faq-h">Questions</h2>
+  </div>
+  <div class="faq">
+  <details>
+   <summary>What is AI orchestration?</summary>
+   <div><p>AI orchestration is the design of a workflow in which one or more AI models, data sources and tools run in a defined order, with checks between the steps. The goal is output you can trust and trace, not a single clever prompt.</p></div>
+  </details>
+  <details>
+   <summary>What does “fails closed” mean?</summary>
+   <div><p>If an output does not pass its checks, the workflow stops instead of passing it on. A wrong answer is held back rather than shipped.</p></div>
+  </details>
+  <details>
+   <summary>Is the AI Governance Review legal advice?</summary>
+   <div><p>No. It is a technical and operational review: risk classification, your role under the EU AI Act, documentation gaps and design fixes. Your lawyer can work from it.</p></div>
+  </details>
+  <details>
+   <summary>Which tools do you build with?</summary>
+   <div><p>Large language models (including the Claude API), n8n for orchestration, and integrations with the systems you already use. The choice is agreed during scoping.</p></div>
+  </details>
+  <details>
+   <summary>How is an engagement quoted?</summary>
+   <div><p>Every engagement is scoped and quoted in writing before work starts. ZORRI is not a VAT payer, so quotes are final, with no VAT added.</p></div>
+  </details>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-h">
+ <div class="wrap">
+  <h2 id="contact-h">Have an AI system in mind?</h2>
+  <p>Describe what it should do, where its inputs come from and who relies on its output. You'll get questions back, or a scope.</p>
+  <a class="button" href="#contact" data-mail="AI%20systems">Email us</a>
+ </div>
+</section>
+</main>
+<footer class="site-footer">
+ <div class="wrap">
+  <div>
+   <span class="wm" aria-hidden="true">ZOR<span class="tilt">R</span>I</span>
+   <p class="descriptor">Story · Strategy · Systems</p>
+   <p>© 2026 ZORRI S.R.L., Bucharest, Romania. CUI 55137499. J2026042991009.</p>
+  </div>
+  <ul>
+   <li><a href="/about">About</a></li>
+   <li><a href="/services">Services</a></li>
+   <li><a href="/#contact" data-mail="">Email us</a></li>
+  </ul>
+ </div>
+</footer>
+<script>
+(function(){var u="hello",d="zorri"+"."+"ro";document.querySelectorAll("a[data-mail]").forEach(function(a){var s=a.getAttribute("data-mail");a.href="mai"+"lto:"+u+"@"+d+(s?"?subject="+encodeURIComponent(s):"");});})();
+</script>
+</body>
+</html>
+<!-- ZORRI /ai-systems — VERSION 4.0.0 END -->

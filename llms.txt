@@ -1,0 +1,45 @@
+# ZORRI
+
+> ZORRI (ZORRI S.R.L., Bucharest, Romania) is a studio at the intersection of AI systems design, B2B marketing and strategy. Tagline: "Ideas, made happen." It takes clients from idea to live system in three steps — Research (market research, competitive intelligence, pay transparency, EU funding); AI orchestration (pipelines, evaluation, governance); Strategy & go-to-market (strategy, consultancy, advisory, positioning, launch) — and runs its own product, ReLoop.me. Founder: Ligia Adam. Contact: hello@zorri.ro. Fixed-scope offers, quoted per project.
+
+Company: ZORRI S.R.L. · CUI 55137499 · Trade register J2026042991009 · EUID ROONRC.J2026042991009 · EU PIC 860469832 · not a VAT payer (no VAT added). Every engagement is scoped and quoted in writing before work starts. Serves clients across the European Union, in English and Romanian.
+
+## Practices
+
+- [Research](https://zorri.ro/research): market and competitor analysis, labour-market and pay intelligence, EU Pay Transparency Directive (EU) 2023/970 readiness, EU and national funding eligibility and applications, expert calls, business consultancy and training. Not legal advice.
+- [AI orchestration](https://zorri.ro/ai-systems): AI orchestration (LLM workflows, n8n, integrations), custom software and data infrastructure, evaluation and QA of AI outputs (repeat-run, regression, adversarial testing), AI governance (EU AI Act incl. Annex III, Art. 25 provider/deployer boundaries, auditability), GDPR-aware data design, adoption training, ready-made automations.
+- [Strategy & go-to-market](https://zorri.ro/go-to-market): strategy, management consultancy and advisory, positioning and category design, messaging, industry analyst relations, customer references, PR, demand generation, SEO and GEO (AI search visibility), for AI and B2B technology companies.
+
+## All offers ([services](https://zorri.ro/services))
+
+- Advisory Hour — per hour: One hour on an AI build, a governance question, a funding call or a go-to-market decision, with written notes after. [All practices]
+- Expert Call — per hour: Expert input on AI products, HR tech and skills-based hiring, EU pay transparency, B2B tech go-to-market and the CEE market. [Research]
+- Job-Ad Pay Transparency Check — up to 3 job ads: Up to three job ads read against Directive (EU) 2023/970: what is missing, what reads as biased, and a corrected version. [Research]
+- Funding Eligibility Check — per call: Is your company and project eligible for a specific call? A yes or no with the reasons, the gaps and what it would take. [Research]
+- AI Search Visibility Audit — per website: How ChatGPT, Claude, Perplexity and Google's AI answers describe your company today, and the fixes: structured data, llms.txt, content and category language. [Strategy & GTM]
+- Talk or Training Session — per session: A talk or hands-on session on AI orchestration, AI governance, EU pay transparency or B2B go-to-market. [All practices]
+- AI Workflow Audit — per workflow: An existing AI workflow tested for consistency and failure modes: repeat-run tests, edge cases, where it can ship a wrong answer, and what to fix first. [AI orchestration]
+- AI Adoption Workshop — half day or full day: Where AI helps in your workflows, what to automate first, what not to trust, and a 30-day plan. [AI orchestration]
+- Positioning Workshop — one day: A one-day working session that ends with a positioning statement, category choice and messaging your team agrees on. [Strategy & GTM]
+- AI Governance Review — per system: An AI system mapped against the EU AI Act and GDPR: risk classification, provider or deployer role, documentation gaps and what to fix first. Not legal advice. [AI orchestration]
+- Research Brief — per question: One market, labour-market or competitor question, answered with sources and a written brief. [Research]
+- Analyst Relations Readiness — per programme: The analysts who matter for your category, what they expect, and briefing materials ready for the first conversations. [Strategy & GTM]
+- Pay Transparency Readiness Sprint — 2 weeks: An audit of up to 15 job ads and the pay practice behind them, a written pay-range justification per role, a gap list against Directive (EU) 2023/970, and a readout. Not legal advice. [Research]
+- AI Orchestration Sprint — 2 weeks: One production AI workflow with versioned prompts, schema-checked output and a quality gate that fails closed, plus documentation and handover. [AI orchestration]
+- Fractional GTM Lead — per month, 4 days: Four days a month owning positioning, analyst relations, demand generation or launches alongside your team. [Strategy & GTM]
+- GTM Sprint — 2–4 weeks: Positioning and messaging, a category and competitor map, a pricing and channel plan, and a launch plan. [Strategy & GTM]
+- External Project Management — monthly retainer: Ongoing project management and hand-holding across research, AI builds and launches: planning, vendors, weekly check-ins and reporting. [All practices]
+- Funding Application Support — scoped per call: Eligibility check, project design and work plan, budget logic and indicators, and the application file ready to submit. No outcome is guaranteed. [Research]
+- Ready-made AI Automations — licensed per company: AI automations for recurring tasks, such as building accounting or stock documents from a spreadsheet, licensed and set up for your company. [AI orchestration]
+
+## Product
+
+- [ReLoop.me](https://reloop.me): capability intelligence for nonlinear careers and skills-based hiring, built and operated by ZORRI. Role Intel reads a job description; Profile Intel reads a CV. Role Intel API for job boards and HR platforms.
+
+## People
+
+- [Ligia Adam](https://zorri.ro/about), founder: 15+ years in B2B technology go-to-market (Bitdefender analyst relations and global enterprise marketing, Lenovo country marketing, Digital Nation head of marketing), co-founder of CivicTech Romania, GovITHub fellow, builder of ReLoop.me. Forbes 30 Under 30 Romania 2018 (CivicTech Romania team). https://www.linkedin.com/in/ligiaadam
+
+## Optional
+
+- [Full text for LLMs](https://zorri.ro/llms-full.txt)
