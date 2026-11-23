@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.2.0 -->
-<!-- 2.2.0 (2026-11-23): title back to "wrong AI answers" (drift is case study 2's subject); problem quote aligned with the illustration and the tilts ("than a late one"). Everything else unchanged from 2.1.0.
+<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.3.0 -->
+<!-- 2.3.0 (2026-11-23): tilts drawn as three see-saws (inline SVG, to be swapped for the Canva illustration); new "The logic travels" part in What a ZORRI client gets: layer-by-layer table (ReLoop.me vs another AI product) and the two ways to use it. Everything else unchanged from 2.2.0.
+     2.2.0 (2026-11-23): title back to "wrong AI answers" (drift is case study 2's subject); problem quote aligned with the illustration and the tilts ("than a late one"). Everything else unchanged from 2.1.0.
      2.1.0 (2026-11-23): founder's edits applied: new H1 ("AI drift"), context / problem / solution eyebrows, B2C/B2B delivery line, rewritten context and problem copy, SUBMIT/READ/DELIVER labels, gate illustration added, sidebar "Deliverables" and stack + GitHub, Cloudflare. Everything else unchanged from 2.0.0.
      2.0.0 (2026-11-23): rewritten in the founder's own text; Bridge-style portfolio layout (assets/case-study.css 1.0.0):
      wider two-column body with sticky project-info sidebar, pull-quote, tilts, stats band, footer stamp, prev/next,
@@ -286,6 +287,38 @@
   <section aria-labelledby="tilts-h">
    <h2 id="tilts-h">The tilts</h2>
    <p>Like a ReLoop.me report, the engine leans a certain way on purpose. Each lean, and why:</p>
+   <figure class="cs-figure" style="margin-top:var(--s3)">
+    <div class="frame">
+     <svg viewBox="0 80 760 140" role="img" aria-labelledby="tilt-t tilt-d" xmlns="http://www.w3.org/2000/svg" style="min-width:600px">
+      <title id="tilt-t">The three tilts of the ReLoop.me engine</title>
+      <desc id="tilt-d">Three see-saws. Late outweighs wrong. A person outweighs a retry loop. Rollback outweighs a hotfix.</desc>
+      <g font-family="inherit">
+     <g transform="translate(20,0)">
+      <path d="M100 150 L84 178 L116 178 Z" fill="#17434a"/>
+      <g transform="rotate(-9 100 146)"><rect x="8" y="142" width="184" height="8" rx="4" fill="#1e3a43"/>
+       <rect x="14" y="98" width="78" height="44" rx="12" fill="#17434a"/><text x="53" y="125" text-anchor="middle" fill="#fff" font-weight="600" font-size="15">Late</text>
+       <rect x="116" y="110" width="70" height="32" rx="10" fill="#fff" stroke="#dde3e4"/><text x="151" y="131" text-anchor="middle" fill="#33474e" font-size="13">Wrong</text></g>
+      <text x="100" y="206" text-anchor="middle" font-size="13" fill="#c98f16" font-weight="600">late over wrong</text>
+     </g>
+     <g transform="translate(280,0)">
+      <path d="M100 150 L84 178 L116 178 Z" fill="#17434a"/>
+      <g transform="rotate(-9 100 146)"><rect x="8" y="142" width="184" height="8" rx="4" fill="#1e3a43"/>
+       <rect x="14" y="98" width="78" height="44" rx="12" fill="#17434a"/><text x="53" y="125" text-anchor="middle" fill="#fff" font-weight="600" font-size="15">A person</text>
+       <rect x="116" y="110" width="70" height="32" rx="10" fill="#fff" stroke="#dde3e4"/><text x="151" y="131" text-anchor="middle" fill="#33474e" font-size="13">Retry loop</text></g>
+      <text x="100" y="206" text-anchor="middle" font-size="13" fill="#c98f16" font-weight="600">a person over a retry loop</text>
+     </g>
+     <g transform="translate(540,0)">
+      <path d="M100 150 L84 178 L116 178 Z" fill="#17434a"/>
+      <g transform="rotate(-9 100 146)"><rect x="8" y="142" width="184" height="8" rx="4" fill="#1e3a43"/>
+       <rect x="14" y="98" width="78" height="44" rx="12" fill="#17434a"/><text x="53" y="125" text-anchor="middle" fill="#fff" font-weight="600" font-size="15">Rollback</text>
+       <rect x="116" y="110" width="70" height="32" rx="10" fill="#fff" stroke="#dde3e4"/><text x="151" y="131" text-anchor="middle" fill="#33474e" font-size="13">Hotfix</text></g>
+      <text x="100" y="206" text-anchor="middle" font-size="13" fill="#c98f16" font-weight="600">rollback over a hotfix</text>
+     </g>
+      </g>
+     </svg>
+    </div>
+    <figcaption>The engine leans one way on purpose, three times over.</figcaption>
+   </figure>
    <ul class="cs-tilts">
     <li><strong>Late over wrong</strong><span>A held report costs a few hours. A wrong one costs a career or salary decision, and the user's trust.</span></li>
     <li><strong>A person over a retry loop</strong><span>When a read fails, the owner looks at it. Re-running until something passes would hide the reason it failed.</span></li>
@@ -332,7 +365,27 @@
     <li><strong>An independent AI reviewer</strong>, isolated from the model that produced the output</li>
     <li><strong>A fail-closed gate</strong> that stops errors internally, with human-in-the-loop alerts, so recurring errors are caught early and the system improves over time</li>
    </ul>
-   <p>For any workflow where a wrong AI answer costs user trust or revenue. See the <a href="/ai-systems#orchestration">AI Orchestration Sprint</a> and the <a href="/ai-systems#workflow-audit">AI Workflow Audit</a>.</p>
+   <p>For any workflow where a wrong AI answer costs user trust or revenue.</p>
+
+   <h3>The logic travels</h3>
+   <p><strong>ReLoop.me was one specific use case.</strong> It reads CVs and job ads, so its checks are about scoring bands, evidence and pay.</p>
+   <p>The architecture itself is not about CVs. <em>Any AI product that hands people an answer can borrow it.</em> Layer by layer:</p>
+   <table class="cs-table">
+    <thead><tr><th scope="col">Layer</th><th scope="col">In ReLoop.me</th><th scope="col">In another AI product, for example</th></tr></thead>
+    <tbody>
+     <tr><td><strong>Input guards</strong></td><td>Blank or broken CV uploads stopped before any tokens are spent</td><td>An unreadable scanned invoice bounced before the model runs</td></tr>
+     <tr><td><strong>Rule checks</strong></td><td>Scoring bands, claims versus evidence, report structure</td><td>Totals add up, required fields present, policy wording respected</td></tr>
+     <tr><td><strong>Independent reviewer</strong></td><td>A second AI scores the draft read and returns corrections</td><td>A second AI checks a support reply against the help centre before it's sent</td></tr>
+     <tr><td><strong>Fail-closed gate</strong></td><td>The report is held and the owner alerted</td><td>The reply, quote or summary waits for a person</td></tr>
+     <tr><td><strong>Versioned rollback</strong></td><td>Every node change records the version it replaces</td><td>Every prompt and rule change can be undone in one step</td></tr>
+    </tbody>
+   </table>
+
+   <h3>Two ways to use it</h3>
+   <ul>
+    <li><strong>Inside the product you already have.</strong> The checks are built around the AI step you already run, the way they wrap ReLoop.me's engine. Start with an <a href="/ai-systems#workflow-audit">AI Workflow Audit</a> to find where wrong answers get through.</li>
+    <li><strong>Custom-built, from day one.</strong> A new AI workflow designed with the guards, reviewer and gate in place before the first user sees it. That's the <a href="/ai-systems#orchestration">AI Orchestration Sprint</a>.</li>
+   </ul>
    <p class="cs-stamp">Sources: ReLoop.me engine records (Role Intel and Profile Intel tables, Role Intel gate log), read 23 Nov 2026 · repeat-run remeasurement on synthetic CVs, 21 Nov 2026 · stack: Claude API, n8n, Airtable, Supabase, Netlify, GitHub, Cloudflare · built independently, AI-assisted.</p>
   </section>
 
@@ -389,4 +442,4 @@ var t=document.querySelector(".to-top");if(t){var f=function(){t.classList.toggl
 </script>
 </body>
 </html>
-<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.2.0 END -->
+<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.3.0 END -->
