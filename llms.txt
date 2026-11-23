@@ -38,6 +38,10 @@ Company: ZORRI S.R.L. · CUI 55137499 · Trade register J2026042991009 · EUID R
 - AI Opportunity Assessment — 1–2 weeks: A structured look across your operations to find, size and prioritise the workflows worth automating first. [AI orchestration]
 - Product Launch Programme — 6–12 weeks: Research, positioning, product marketing and launch execution in one engagement, run with your team. [Strategy & GTM]
 
+## Case studies
+
+- [How to stop wrong AI answers before they reach users](https://zorri.ro/case-studies/ai-quality-control) (23 Nov 2026): fail-closed quality control for ReLoop.me's AI reports. Rule checks (band logic, claims versus evidence, report structure), an independent AI reviewer and a delivery gate that holds any failing report and alerts the owner. Engine figures as of 23 Nov 2026: 573 reads produced since 14 Jun 2026 (324 Role Intel, 249 Profile Intel, test runs included); 12 Role Intel reads held by the gate and logged between 3 Oct and 12 Nov 2026; pay-estimate spread on repeat runs of the same CV cut from 34% to 4% (synthetic CVs).
+
 ## Product
 
 - [ReLoop.me](https://reloop.me): capability intelligence for nonlinear careers and skills-based hiring, built and operated by ZORRI. Role Intel reads a job description; Profile Intel reads a CV. Role Intel API for job boards and HR platforms.
