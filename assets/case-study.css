@@ -1,4 +1,5 @@
-/* ZORRI — case study template — VERSION 1.0.0 (2026-11-23) */
+/* ZORRI — case study template — VERSION 1.0.1 (2026-11-23) */
+/* 1.0.1: "How it works" steps laid out as three even columns (stacked on phones). */
 /* 1.0.0: Bridge-style portfolio page for case studies, on top of zorri.css 4.0.0 (unchanged).
    Wide two-column body (text + sticky project-info sidebar), full-width figure and stats band,
    pull-quote and footer stamp borrowed from ReLoop.me report design, the two-line loop signature
@@ -23,10 +24,11 @@
 .cs-main li::marker { color: var(--ochre); }
 .cs-main em.aside { display: block; color: var(--ink); margin-top: var(--s2); }
 
-.cs-flowline { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin: var(--s2) 0 var(--s3); padding: 0; list-style: none; max-width: none !important; }
-.cs-flowline li { margin: 0; background: var(--panel); border-radius: 999px; padding: 0.45rem 1rem; font-size: 0.96875rem; color: var(--ink); }
+.cs-flowline { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr); align-items: stretch; gap: 0.75rem; margin: var(--s2) 0 var(--s3); padding: 0; list-style: none; max-width: none !important; }
+.cs-flowline li { margin: 0; background: var(--panel); border-radius: 18px; padding: 0.85rem 1rem; line-height: 1.45; font-size: 0.96875rem; color: var(--ink); }
 .cs-flowline li::marker { content: none; }
-.cs-flowline .to { background: none; padding: 0; color: var(--ochre); font-weight: 600; }
+.cs-flowline .to { background: none; padding: 0; color: var(--ochre); font-weight: 600; align-self: center; }
+.cs-flowline strong { display: block; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ochre); }
 
 /* Pull-quote, as the verdict line in a ReLoop.me brief */
 .cs-quote { margin: var(--s4) 0; padding: 0 0 0 var(--s3); border-left: 3px solid var(--ochre); font-family: var(--serif); font-style: italic; font-size: clamp(1.375rem, 1.1rem + 1vw, 1.875rem); line-height: 1.3; color: var(--ink); max-width: 34ch; }
@@ -92,10 +94,12 @@
   .cs-side dt:nth-of-type(2) { margin-top: 0; }
 }
 @media (max-width: 48rem) {
+  .cs-flowline { grid-template-columns: 1fr; }
+  .cs-flowline .to { transform: rotate(90deg); justify-self: center; }
   .cs-stats { grid-template-columns: 1fr; }
   .cs-tilts li { grid-template-columns: 1fr; gap: 0.25rem; }
   .cs-nav { grid-template-columns: 1fr; text-align: center; }
   .cs-nav .next, .cs-nav .all { justify-self: center; text-align: center; }
 }
 @media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
-/* ZORRI — case study template — VERSION 1.0.0 END */
+/* ZORRI — case study template — VERSION 1.0.1 END */

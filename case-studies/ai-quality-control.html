@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.0.0 -->
-<!-- 2.0.0 (2026-11-23): rewritten in the founder's own text; Bridge-style portfolio layout (assets/case-study.css 1.0.0):
+<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.1.0 -->
+<!-- 2.1.0 (2026-11-23): founder's edits applied: new H1 ("AI drift"), context / problem / solution eyebrows, B2C/B2B delivery line, rewritten context and problem copy, SUBMIT/READ/DELIVER labels, gate illustration added, sidebar "Deliverables" and stack + GitHub, Cloudflare. Everything else unchanged from 2.0.0.
+     2.0.0 (2026-11-23): rewritten in the founder's own text; Bridge-style portfolio layout (assets/case-study.css 1.0.0):
      wider two-column body with sticky project-info sidebar, pull-quote, tilts, stats band, footer stamp, prev/next,
      back-to-top arrow. Byline removed (author = ZORRI). Kept from 1.0.0: all engine figures and dates, gate table,
      flow diagram, JSON-LD graph (author switched to the organisation), links and UTM tags, contact band.
@@ -9,7 +10,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Case study: stopping wrong AI answers before they reach users — ZORRI</title>
+<title>Case study: how to stop AI drift before it reaches users — ZORRI</title>
 <meta name="description" content="How ReLoop.me's AI reports pass input guards, rule checks, an independent AI reviewer and a fail-closed delivery gate before anyone sees them. 573 reads produced, 12 held by the gate.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://zorri.ro/case-studies/ai-quality-control">
@@ -19,12 +20,12 @@
 <meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ZORRI">
-<meta property="og:title" content="Case study: stopping wrong AI answers before they reach users">
+<meta property="og:title" content="Case study: how to stop AI drift before it reaches users">
 <meta property="og:description" content="Input guards, rule checks, an independent AI reviewer and a fail-closed delivery gate for ReLoop.me's AI reports.">
 <meta property="og:url" content="https://zorri.ro/case-studies/ai-quality-control">
-<meta property="og:image" content="https://zorri.ro/assets/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://zorri.ro/assets/img/case-studies/every-report-meets-the-gate.jpg">
+<meta property="og:image:width" content="1680">
+<meta property="og:image:height" content="944">
 <meta property="og:locale" content="en_GB">
 <meta property="article:published_time" content="2026-11-23">
 <meta name="twitter:card" content="summary_large_image">
@@ -61,8 +62,8 @@
   {
    "@type": "Article",
    "@id": "https://zorri.ro/case-studies/ai-quality-control#article",
-   "headline": "How to stop wrong AI answers before they reach users",
-   "alternativeHeadline": "Automated, fail-closed quality control for ReLoop.me's AI-generated reports",
+   "headline": "How to stop AI drift before it reaches users",
+   "alternativeHeadline": "The automated, fail-closed quality control built for ReLoop.me",
    "description": "How ReLoop.me's capability intelligence reports pass input guards, rule checks, an independent AI reviewer and a fail-closed delivery gate before delivery, with figures from the live engine.",
    "articleSection": "Case studies",
    "datePublished": "2026-11-23",
@@ -81,7 +82,7 @@
     { "@type": "WebPage", "name": "ReLoop.me Role Intel", "url": "https://www.reloop.me/role-intel" }
    ],
    "mainEntityOfPage": "https://zorri.ro/case-studies/ai-quality-control",
-   "image": "https://zorri.ro/assets/og.png",
+   "image": "https://zorri.ro/assets/img/case-studies/every-report-meets-the-gate.jpg",
    "isPartOf": { "@id": "https://zorri.ro/#website" }
   },
   {
@@ -138,8 +139,8 @@
 <header class="cs-head">
  <div class="wrap">
   <p class="descriptor"><a href="/case-studies/">Case study</a> · AI orchestration</p>
-  <h1>How to stop wrong AI answers before they reach users</h1>
-  <p class="line">Automated, fail-closed quality control for ReLoop.me's AI-generated reports.</p>
+  <h1>How to stop AI drift before it reaches users</h1>
+  <p class="line">Case study on the automated, fail-closed quality control built for ReLoop.me.</p>
  </div>
  <svg class="cs-loop" viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
   <path d="M0 40 C 200 4, 360 4, 560 32 S 960 62, 1200 22" fill="none" stroke="#19b7a5" stroke-opacity="0.16" stroke-width="10" stroke-linecap="round"/>
@@ -154,30 +155,40 @@
 
   <section aria-labelledby="challenge-h">
    <h2 id="challenge-h">The challenge: AI getting it “mostly right” isn't good enough</h2>
-   <p><a href="https://www.reloop.me/?utm_source=zorri.ro&amp;utm_medium=case_study">ReLoop.me</a> is an AI-powered platform that reads the actual professional capability inside a CV or a job description, <em>in perspective and in between the lines</em>, to give you the bigger picture:</p>
+   <p class="descriptor">First, some context</p>
+   <p><a href="https://www.reloop.me/?utm_source=zorri.ro&amp;utm_medium=case_study">ReLoop.me</a> is an AI-powered platform that reads the actual professional capability inside a CV or a job description.</p>
+   <p>It looks at it <em>in perspective and between the lines</em>, to give you the bigger picture, delivering its capability intelligence either as a <strong>complex report</strong> (for B2C) or as a <strong>comparable data set</strong> (for B2B).</p>
+   <p>It's essentially built to follow the human logic of an experienced recruiter or domain specialist, <em>on AI steroids</em>, and give you a <strong>neutral perspective</strong> of what's truly there, skills-wise, across domains and geographies. It tells you things like:</p>
    <ul>
-    <li><strong>claims versus what's actually demonstrated</strong></li>
-    <li>the specific <strong>skills combo-mix</strong> evidenced by the data submitted</li>
-    <li>the <strong>estimated market value</strong> for a specific role or profile</li>
+    <li>what's <strong>actually demonstrated</strong> (in a CV) or <strong>needed</strong> (in a job ad), versus the initial claims</li>
+    <li>the specific <strong>combo-mix of skills</strong> evidenced by a specific CV or job description</li>
+    <li>the <strong>estimated market value</strong> for a specific role or profile: <em>calculated, not averaged</em></li>
    </ul>
-   <p>It's built to follow the human logic of an experienced recruiter or domain specialist, to give a <strong>neutral, AI-scaled perspective</strong> of what's truly there skills-wise, across domains and geographies.</p>
-   <p>Designed specifically to handle the complexity inside <strong>nonlinear careers</strong>, ReLoop.me is a <strong>capability intelligence platform</strong> that supports fair reviews and skills-based hiring.</p>
+   <p>ReLoop.me is designed specifically to recognise and interpret the complexity of skills and capabilities of professionals with <strong>nonlinear careers</strong>, and to support fair reviews and teams committed to <strong>skills-based hiring</strong>.</p>
 
    <h3>How it works</h3>
    <ul class="cs-flowline" aria-label="How it works">
-    <li>A user submits a CV or job description</li><li class="to" aria-hidden="true">→</li>
-    <li>a multi-step, rules-enforced AI engine reads it</li><li class="to" aria-hidden="true">→</li>
-    <li>a structured report is emailed</li>
+    <li><strong>Submit:</strong> a user submits a CV or job description</li><li class="to" aria-hidden="true">→</li>
+    <li><strong>Read:</strong> a multi-step, rules-enforced AI engine reads it</li><li class="to" aria-hidden="true">→</li>
+    <li><strong>Deliver:</strong> a structured report is emailed</li>
    </ul>
    <p><a href="https://www.reloop.me/profile-intel?utm_source=zorri.ro&amp;utm_medium=case_study"><strong>Profile Intel</strong></a> for a CV, <a href="https://www.reloop.me/role-intel?utm_source=zorri.ro&amp;utm_medium=case_study"><strong>Role Intel</strong></a> for a job description.</p>
-   <p>People and companies use these reports for career and salary decisions.</p>
-   <blockquote class="cs-quote"><p>A wrong or contradictory report does more damage than a late one.</p></blockquote>
-   <p>Large language models are probabilistic. They can return malformed output, drop required sections, or contradict their own assessment.</p>
-   <p>Raw output couldn't be sent to users unchecked, and doing every check by hand wouldn't scale.</p>
+   <p>People and companies usually use these reports, or the calibrated data, for career and salary decisions.</p>
+
+   <p class="descriptor" style="margin-top:var(--s4)">The problem?</p>
+   <blockquote class="cs-quote"><p>A wrong AI-generated report does more damage than having no report.</p></blockquote>
+   <p>AIs are probabilistic.</p>
+   <p>They <strong>hallucinate, drift, invent, ignore, inflate, flatter</strong>, or contradict their own assessment.</p>
+   <p>You can't really send raw AI interpretation to users unchecked. <em>Not ethical. Or valuable.</em></p>
+   <p>And checking it by hand can't scale well.</p>
   </section>
 
   <section aria-labelledby="built-h">
+   <p class="descriptor">The solution</p>
    <h2 id="built-h">What we built</h2>
+   <figure class="cs-figure" style="margin:0 0 var(--s3)">
+    <img src="/assets/img/case-studies/every-report-meets-the-gate.jpg" width="1680" height="944" alt="Illustration: reports ride a conveyor towards a delivery gate. One worried report marked with a question mark is lifted into a box labelled Held and the owner is alerted by email; the gate says: Not today, a human will look at you first. The good reports carry on to the user's mailbox.">
+   </figure>
 
    <h3>Checking what comes in: the input guards</h3>
    <p>AI feeds on the data it receives, but even AI can fail to read some data.</p>
@@ -321,7 +332,7 @@
     <li><strong>A fail-closed gate</strong> that stops errors internally, with human-in-the-loop alerts, so recurring errors are caught early and the system improves over time</li>
    </ul>
    <p>For any workflow where a wrong AI answer costs user trust or revenue. See the <a href="/ai-systems#orchestration">AI Orchestration Sprint</a> and the <a href="/ai-systems#workflow-audit">AI Workflow Audit</a>.</p>
-   <p class="cs-stamp">Sources: ReLoop.me engine records (Role Intel and Profile Intel tables, Role Intel gate log), read 23 Nov 2026 · repeat-run remeasurement on synthetic CVs, 21 Nov 2026 · stack: Claude API, n8n, Airtable, Supabase, Netlify · built independently, AI-assisted.</p>
+   <p class="cs-stamp">Sources: ReLoop.me engine records (Role Intel and Profile Intel tables, Role Intel gate log), read 23 Nov 2026 · repeat-run remeasurement on synthetic CVs, 21 Nov 2026 · stack: Claude API, n8n, Airtable, Supabase, Netlify, GitHub, Cloudflare · built independently, AI-assisted.</p>
   </section>
 
  </div>
@@ -332,8 +343,8 @@
    <dt>Client</dt><dd>ReLoop.me, ZORRI's own product</dd>
    <dt>Products</dt><dd><a class="chip profile" href="https://www.reloop.me/profile-intel?utm_source=zorri.ro&amp;utm_medium=case_study">Profile Intel</a><a class="chip role" href="https://www.reloop.me/role-intel?utm_source=zorri.ro&amp;utm_medium=case_study">Role Intel</a></dd>
    <dt>Practice</dt><dd><a href="/ai-systems">AI orchestration</a></dd>
-   <dt>What we did</dt><dd>Input guards, rule checks, AI reviewer, fail-closed gate, versioned rollback</dd>
-   <dt>Stack</dt><dd>Claude API, n8n, Airtable, Supabase, Netlify</dd>
+   <dt>Deliverables</dt><dd>Input guards, rule checks, AI reviewer, fail-closed gate, versioned rollback</dd>
+   <dt>Stack</dt><dd>Claude API, n8n, Airtable, Supabase, Netlify, GitHub, Cloudflare</dd>
    <dt>Published</dt><dd><time datetime="2026-11-23">23 November 2026</time></dd>
   </dl>
   <a class="button button-line" href="https://www.reloop.me/?utm_source=zorri.ro&amp;utm_medium=case_study">Visit ReLoop.me ↗</a>
@@ -377,4 +388,4 @@ var t=document.querySelector(".to-top");if(t){var f=function(){t.classList.toggl
 </script>
 </body>
 </html>
-<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.0.0 END -->
+<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.1.0 END -->
