@@ -1,0 +1,101 @@
+/* ZORRI — case study template — VERSION 1.0.0 (2026-11-23) */
+/* 1.0.0: Bridge-style portfolio page for case studies, on top of zorri.css 4.0.0 (unchanged).
+   Wide two-column body (text + sticky project-info sidebar), full-width figure and stats band,
+   pull-quote and footer stamp borrowed from ReLoop.me report design, the two-line loop signature
+   (jade = Profile Intel, gold = Role Intel) as divider, prev/next nav, back-to-top arrow. */
+
+.cs-head { padding: var(--s5) 0 var(--s4); }
+.cs-head .descriptor a { text-decoration: none; }
+.cs-head h1 { max-width: 20ch; }
+.cs-head .line { font-family: var(--serif); font-size: var(--t-lead); color: var(--ochre); margin: var(--s3) 0 0; max-width: 46ch; }
+.cs-loop { display: block; width: 100%; max-width: var(--page); height: 64px; margin: var(--s3) auto 0; }
+
+/* Body: wide text column + sidebar */
+.cs-grid { display: grid; grid-template-columns: minmax(0, 1fr) 18.5rem; gap: var(--s5); align-items: start; }
+.cs-main p, .cs-main ul, .cs-main ol { max-width: 70ch; }
+.cs-main > section { padding: var(--s4) 0; border-top: 1px solid var(--line); }
+.cs-main > section:first-child { border-top: 0; padding-top: 0; }
+.cs-main h2 { font-size: clamp(1.875rem, 1.5rem + 1.4vw, 2.625rem); margin-bottom: var(--s3); }
+.cs-main h3 { font-size: 1.375rem; margin: var(--s4) 0 var(--s1); }
+.cs-main h3 + p { margin-top: 0; }
+.cs-main ul { padding-left: 1.2rem; }
+.cs-main li { margin-bottom: 0.4rem; }
+.cs-main li::marker { color: var(--ochre); }
+.cs-main em.aside { display: block; color: var(--ink); margin-top: var(--s2); }
+
+.cs-flowline { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin: var(--s2) 0 var(--s3); padding: 0; list-style: none; max-width: none !important; }
+.cs-flowline li { margin: 0; background: var(--panel); border-radius: 999px; padding: 0.45rem 1rem; font-size: 0.96875rem; color: var(--ink); }
+.cs-flowline li::marker { content: none; }
+.cs-flowline .to { background: none; padding: 0; color: var(--ochre); font-weight: 600; }
+
+/* Pull-quote, as the verdict line in a ReLoop.me brief */
+.cs-quote { margin: var(--s4) 0; padding: 0 0 0 var(--s3); border-left: 3px solid var(--ochre); font-family: var(--serif); font-style: italic; font-size: clamp(1.375rem, 1.1rem + 1vw, 1.875rem); line-height: 1.3; color: var(--ink); max-width: 34ch; }
+
+/* Tilts: the trade-offs, each with its rationale (as in the briefs) */
+.cs-tilts { list-style: none; padding: 0 !important; margin: var(--s3) 0 0; display: grid; gap: var(--s2); max-width: 70ch; }
+.cs-tilts li { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: var(--s2); padding: var(--s2) 0; border-bottom: 1px solid var(--line); margin: 0; }
+.cs-tilts li::marker { content: none; }
+.cs-tilts strong { font-family: var(--serif); font-weight: 400; font-size: 1.1875rem; color: var(--ink); }
+
+/* Sidebar — project info */
+.cs-side { position: sticky; top: 6rem; background: var(--panel); border-radius: 28px 28px 28px 4px; padding: var(--s3); font-size: 0.9375rem; }
+.cs-side h2 { font-family: var(--sans); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: var(--s2); }
+.cs-side dl { margin: 0; }
+.cs-side dt { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ochre); margin-top: var(--s2); }
+.cs-side dt:first-child { margin-top: 0; }
+.cs-side dd { margin: 0.2rem 0 0; color: var(--ink); }
+.cs-side .chip { display: inline-flex; align-items: center; gap: 0.45rem; margin-right: 0.75rem; }
+.cs-side .chip::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--dot, var(--ochre)); }
+.cs-side .chip.profile { --dot: #19b7a5; }
+.cs-side .chip.role { --dot: #c99546; }
+.cs-side .button { margin-top: var(--s3); display: flex; justify-content: center; }
+
+/* Full-width figure */
+.cs-figure { margin: var(--s3) 0 var(--s2); }
+.cs-figure .frame { background: var(--panel); border-radius: 0 var(--corner) 0 0; padding: var(--s3); overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.cs-figure svg { min-width: 760px; width: 100%; height: auto; font-family: var(--sans); display: block; }
+.cs-figure img { width: 100%; border-radius: 0 var(--corner) 0 0; }
+.cs-figure figcaption { font-size: var(--t-small); margin-top: var(--s1); max-width: 70ch; }
+
+/* Stats — the counters band */
+.cs-stats { list-style: none; padding: 0 !important; margin: var(--s3) 0 var(--s4); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); max-width: none !important; }
+.cs-stats li { background: var(--panel); border-radius: 24px; padding: var(--s3); margin: 0; }
+.cs-stats li::marker { content: none; }
+.cs-stats strong { display: block; white-space: nowrap; font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 1.6rem + 1vw, 2.5rem); line-height: 1; color: var(--ink); margin-bottom: var(--s1); }
+.cs-stats span { font-size: 0.9375rem; }
+
+.cs-table { width: 100%; border-collapse: collapse; margin: var(--s2) 0; font-size: 0.96875rem; }
+.cs-table th, .cs-table td { text-align: left; padding: 0.6rem 0.75rem 0.6rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.cs-table th { font-weight: 600; color: var(--ink); }
+.cs-table td.n, .cs-table th.n { text-align: right; font-variant-numeric: tabular-nums; width: 4rem; }
+.cs-table caption { caption-side: bottom; text-align: left; font-size: var(--t-small); padding-top: 0.5rem; }
+
+/* Footer stamp, as a brief's footer */
+.cs-stamp { font-size: 0.8125rem; color: var(--text); border-top: 1px dashed var(--line); padding-top: var(--s2); margin-top: var(--s4); max-width: none !important; }
+
+/* Prev / next */
+.cs-nav { max-width: var(--page); margin: 0 auto; padding-left: var(--gutter) !important; padding-right: var(--gutter) !important; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: var(--s3); padding: var(--s4) 0; border-top: 1px solid var(--line); }
+.cs-nav a { text-decoration: none; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.cs-nav .all { justify-self: center; }
+.cs-nav .next { justify-self: end; text-align: right; }
+.cs-nav .muted { color: var(--text); opacity: 0.6; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Back to top */
+.to-top { position: fixed; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); width: 48px; height: 48px; border-radius: 50%; background: var(--ochre); color: #fff; display: grid; place-items: center; text-decoration: none; font-size: 1.25rem; box-shadow: 0 6px 18px rgba(23, 67, 74, 0.18); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity 0.2s, transform 0.2s; z-index: 6; }
+.to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:hover { background: var(--ink); }
+
+@media (max-width: 62rem) {
+  .cs-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s3); }
+  .cs-side { position: static; order: -1; }
+  .cs-side dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--s3); }
+  .cs-side dt:nth-of-type(2) { margin-top: 0; }
+}
+@media (max-width: 48rem) {
+  .cs-stats { grid-template-columns: 1fr; }
+  .cs-tilts li { grid-template-columns: 1fr; gap: 0.25rem; }
+  .cs-nav { grid-template-columns: 1fr; text-align: center; }
+  .cs-nav .next, .cs-nav .all { justify-self: center; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
+/* ZORRI — case study template — VERSION 1.0.0 END */

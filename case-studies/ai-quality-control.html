@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<!-- ZORRI /case-studies/ai-quality-control — VERSION 1.0.0 -->
-<!-- 1.0.0 (2026-11-23): first publication. Copy reviewed in the ReLoop.me advisor chat; figures pulled
-     from the ReLoop.me engine on 23 Nov 2026 (Airtable RIA Table, Candidates 2, RIA Gate Log; ReLoop.me STATE
-     of 21 Nov 2026). Flow diagram is inline SVG in site colours. Uses /assets/zorri.css 4.0.0 unchanged;
-     page-only styles are scoped with the cs- prefix. -->
+<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.0.0 -->
+<!-- 2.0.0 (2026-11-23): rewritten in the founder's own text; Bridge-style portfolio layout (assets/case-study.css 1.0.0):
+     wider two-column body with sticky project-info sidebar, pull-quote, tilts, stats band, footer stamp, prev/next,
+     back-to-top arrow. Byline removed (author = ZORRI). Kept from 1.0.0: all engine figures and dates, gate table,
+     flow diagram, JSON-LD graph (author switched to the organisation), links and UTM tags, contact band.
+     1.0.0 (2026-11-23): first publication. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Case study: stopping wrong AI answers before they reach users — ZORRI</title>
-<meta name="description" content="How ZORRI built fail-closed quality control into ReLoop.me's AI reports: rule checks, an independent AI reviewer and a delivery gate. 573 reads produced, 12 held by the gate.">
+<meta name="description" content="How ReLoop.me's AI reports pass input guards, rule checks, an independent AI reviewer and a fail-closed delivery gate before anyone sees them. 573 reads produced, 12 held by the gate.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="author" content="Ligia Adam, ZORRI S.R.L.">
 <link rel="canonical" href="https://zorri.ro/case-studies/ai-quality-control">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -20,7 +20,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ZORRI">
 <meta property="og:title" content="Case study: stopping wrong AI answers before they reach users">
-<meta property="og:description" content="Fail-closed quality control for ReLoop.me's AI reports: rule checks, an independent AI reviewer and a delivery gate.">
+<meta property="og:description" content="Input guards, rule checks, an independent AI reviewer and a fail-closed delivery gate for ReLoop.me's AI reports.">
 <meta property="og:url" content="https://zorri.ro/case-studies/ai-quality-control">
 <meta property="og:image" content="https://zorri.ro/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -31,29 +31,7 @@
 <link rel="preload" href="/assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/zorri.css">
-<style>
-.cs-meta { font-size: var(--t-small); color: var(--text); margin-top: var(--s3); }
-.cs-meta time { font-weight: 600; color: var(--ink); }
-.cs-summary { border-left: 3px solid var(--ochre); padding-left: var(--s3); }
-.cs-body h3 { margin: var(--s4) 0 var(--s2); }
-.cs-body ul { padding-left: 1.2rem; max-width: var(--measure); }
-.cs-body li { margin-bottom: var(--s1); }
-.cs-body li::marker { color: var(--ochre); }
-.cs-flow { margin: var(--s4) 0 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.cs-flow svg { min-width: 760px; width: 100%; height: auto; font-family: var(--sans); }
-.cs-flow figcaption { font-size: var(--t-small); margin-top: var(--s2); max-width: var(--measure); }
-.cs-body ul.cs-stats { list-style: none; padding: 0; max-width: none; margin: var(--s4) 0 var(--s4); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); }
-.cs-stats li { background: var(--panel); margin: 0; border-radius: 24px; padding: var(--s3); }
-.cs-stats strong { display: block; white-space: nowrap; font-family: var(--serif); font-weight: 400; font-size: var(--t-h2); line-height: 1; color: var(--ink); margin-bottom: var(--s1); }
-.cs-stats span { font-size: 0.96875rem; }
-.cs-table { width: 100%; max-width: 48rem; border-collapse: collapse; margin: var(--s3) 0; font-size: 0.96875rem; }
-.cs-table th, .cs-table td { text-align: left; padding: 0.6rem 0.75rem 0.6rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
-.cs-table th { font-weight: 600; color: var(--ink); }
-.cs-table td.n { font-variant-numeric: tabular-nums; text-align: right; width: 4rem; }
-.cs-note { font-size: var(--t-small); }
-.cs-products a { font-weight: 600; }
-@media (max-width: 48rem) { .cs-body ul.cs-stats { grid-template-columns: 1fr; } .cs-stats strong { font-size: 2.5rem; } }
-</style>
+<link rel="stylesheet" href="/assets/case-study.css">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -68,16 +46,7 @@
    "email": "hello@zorri.ro",
    "description": "ZORRI is a studio at the intersection of AI systems design, B2B marketing and strategy, based in Bucharest, Romania. ZORRI builds and operates ReLoop.me.",
    "address": { "@type": "PostalAddress", "addressLocality": "Bucharest", "addressCountry": "RO" },
-   "founder": { "@id": "https://zorri.ro/about#ligia-adam" },
    "owns": { "@id": "https://reloop.me/#product" }
-  },
-  {
-   "@type": "Person",
-   "@id": "https://zorri.ro/about#ligia-adam",
-   "name": "Ligia Adam",
-   "url": "https://zorri.ro/about",
-   "worksFor": { "@id": "https://zorri.ro/#org" },
-   "sameAs": ["https://www.linkedin.com/in/ligiaadam", "https://github.com/LigiaAdam"]
   },
   {
    "@type": ["Product", "SoftwareApplication"],
@@ -94,12 +63,12 @@
    "@id": "https://zorri.ro/case-studies/ai-quality-control#article",
    "headline": "How to stop wrong AI answers before they reach users",
    "alternativeHeadline": "Automated, fail-closed quality control for ReLoop.me's AI-generated reports",
-   "description": "How ZORRI built rule checks, an independent AI reviewer and a fail-closed delivery gate into ReLoop.me's capability intelligence reports, with figures from the live engine.",
+   "description": "How ReLoop.me's capability intelligence reports pass input guards, rule checks, an independent AI reviewer and a fail-closed delivery gate before delivery, with figures from the live engine.",
    "articleSection": "Case studies",
    "datePublished": "2026-11-23",
    "dateModified": "2026-11-23",
    "inLanguage": "en",
-   "author": { "@id": "https://zorri.ro/about#ligia-adam" },
+   "author": { "@id": "https://zorri.ro/#org" },
    "publisher": { "@id": "https://zorri.ro/#org" },
    "about": [
     { "@id": "https://reloop.me/#product" },
@@ -138,12 +107,12 @@
     {
      "@type": "Question",
      "name": "What is a fail-closed delivery gate?",
-     "acceptedAnswer": { "@type": "Answer", "text": "A final check that stops an AI output from being sent when any required check fails or returns no verdict. The output is held and a person is alerted, instead of the user receiving it." }
+     "acceptedAnswer": { "@type": "Answer", "text": "A final check that stops an AI output from being sent when any required check fails or returns no verdict. The output is held internally and a person is alerted, instead of the user receiving it." }
     },
     {
      "@type": "Question",
-     "name": "Does an AI reviewer guarantee correct answers?",
-     "acceptedAnswer": { "@type": "Answer", "text": "No. Rule checks and an independent reviewer catch structural and logic errors and many factual ones, but no check makes a model infallible. That is why held outputs go to a person and every production change can be rolled back." }
+     "name": "Does an AI reviewer make AI infallible?",
+     "acceptedAnswer": { "@type": "Answer", "text": "No. Rule checks and an independent reviewer catch structural and logic errors, but they don't make AI infallible. That is why held reports go to a person and every production change can be rolled back." }
     },
     {
      "@type": "Question",
@@ -156,7 +125,7 @@
 }
 </script>
 </head>
-<body>
+<body id="top">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
  <div class="wrap">
@@ -165,43 +134,75 @@
  </div>
 </header>
 <main id="main">
-<article itemscope itemtype="https://schema.org/Article">
-<div class="page-head">
+<article>
+<header class="cs-head">
  <div class="wrap">
   <p class="descriptor"><a href="/case-studies/">Case study</a> · AI orchestration</p>
-  <h1 itemprop="headline">How to stop wrong AI answers before they reach users</h1>
+  <h1>How to stop wrong AI answers before they reach users</h1>
   <p class="line">Automated, fail-closed quality control for ReLoop.me's AI-generated reports.</p>
-  <p class="lead cs-summary">ZORRI built a production AI pipeline for <a href="https://www.reloop.me/?utm_source=zorri.ro&amp;utm_medium=case_study">ReLoop.me</a> where every report passes rule checks and an independent AI review before delivery. A report that fails is held and the owner is alerted. Users never receive raw model output.</p>
-  <p class="cs-meta">Published <time itemprop="datePublished" datetime="2026-11-23">23 November 2026</time> · Figures from the live engine as of 23 November 2026 · By <a href="/about">Ligia Adam</a></p>
  </div>
-</div>
+ <svg class="cs-loop" viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 40 C 200 4, 360 4, 560 32 S 960 62, 1200 22" fill="none" stroke="#19b7a5" stroke-opacity="0.16" stroke-width="10" stroke-linecap="round"/>
+  <path d="M0 40 C 200 4, 360 4, 560 32 S 960 62, 1200 22" fill="none" stroke="#19b7a5" stroke-width="1.25"/>
+  <path d="M0 28 C 240 58, 420 58, 640 30 S 1000 2, 1200 36" fill="none" stroke="#c99546" stroke-opacity="0.16" stroke-width="10" stroke-linecap="round"/>
+  <path d="M0 28 C 240 58, 420 58, 640 30 S 1000 2, 1200 36" fill="none" stroke="#c99546" stroke-width="1.25"/>
+ </svg>
+</header>
 
-<section class="section block-white cs-body" aria-labelledby="challenge-h">
- <div class="wrap">
-  <div class="section-head">
-   <h2 id="challenge-h">The challenge: “mostly right” isn't good enough</h2>
-  </div>
-  <p><a href="https://www.reloop.me/?utm_source=zorri.ro&amp;utm_medium=case_study">ReLoop.me</a> is a capability intelligence platform for nonlinear careers and skills-based hiring. It reads the professional capability inside a CV or job description: what is claimed versus what is demonstrated, the skills mix the evidence supports, and an estimated market value for the role or profile. It reads the way an experienced recruiter and domain specialist would, and gives a neutral, calibrated view of what is actually there.</p>
-  <p class="cs-products">A user submits a CV or job description. ReLoop.me runs it through a multi-step, rules-enforced AI engine and emails a structured report: <a href="https://www.reloop.me/profile-intel?utm_source=zorri.ro&amp;utm_medium=case_study">Profile Intel</a> for a CV, <a href="https://www.reloop.me/role-intel?utm_source=zorri.ro&amp;utm_medium=case_study">Role Intel</a> for a job description.</p>
-  <p>People use these reports for career and salary decisions, so a wrong or contradictory report does more damage than a late one. Large language models are probabilistic. They can return malformed output, drop required sections, or contradict their own assessment. Raw output couldn't be sent to users unchecked, and doing every check by hand wouldn't scale.</p>
- </div>
-</section>
+<div class="wrap cs-grid">
+ <div class="cs-main">
 
-<section class="section block-panel cs-body" aria-labelledby="built-h">
- <div class="wrap">
-  <div class="section-head">
+  <section aria-labelledby="challenge-h">
+   <h2 id="challenge-h">The challenge: AI getting it “mostly right” isn't good enough</h2>
+   <p><a href="https://www.reloop.me/?utm_source=zorri.ro&amp;utm_medium=case_study">ReLoop.me</a> is an AI-powered platform that reads the actual professional capability inside a CV or a job description, <em>in perspective and in between the lines</em>, to give you the bigger picture:</p>
+   <ul>
+    <li><strong>claims versus what's actually demonstrated</strong></li>
+    <li>the specific <strong>skills combo-mix</strong> evidenced by the data submitted</li>
+    <li>the <strong>estimated market value</strong> for a specific role or profile</li>
+   </ul>
+   <p>It's built to follow the human logic of an experienced recruiter or domain specialist, to give a <strong>neutral, AI-scaled perspective</strong> of what's truly there skills-wise, across domains and geographies.</p>
+   <p>Designed specifically to handle the complexity inside <strong>nonlinear careers</strong>, ReLoop.me is a <strong>capability intelligence platform</strong> that supports fair reviews and skills-based hiring.</p>
+
+   <h3>How it works</h3>
+   <ul class="cs-flowline" aria-label="How it works">
+    <li>A user submits a CV or job description</li><li class="to" aria-hidden="true">→</li>
+    <li>a multi-step, rules-enforced AI engine reads it</li><li class="to" aria-hidden="true">→</li>
+    <li>a structured report is emailed</li>
+   </ul>
+   <p><a href="https://www.reloop.me/profile-intel?utm_source=zorri.ro&amp;utm_medium=case_study"><strong>Profile Intel</strong></a> for a CV, <a href="https://www.reloop.me/role-intel?utm_source=zorri.ro&amp;utm_medium=case_study"><strong>Role Intel</strong></a> for a job description.</p>
+   <p>People and companies use these reports for career and salary decisions.</p>
+   <blockquote class="cs-quote"><p>A wrong or contradictory report does more damage than a late one.</p></blockquote>
+   <p>Large language models are probabilistic. They can return malformed output, drop required sections, or contradict their own assessment.</p>
+   <p>Raw output couldn't be sent to users unchecked, and doing every check by hand wouldn't scale.</p>
+  </section>
+
+  <section aria-labelledby="built-h">
    <h2 id="built-h">What we built</h2>
-  </div>
-  <ul>
-   <li><strong>Rule checks on every read before delivery.</strong> They validate scoring-band logic, the claims-versus-evidence audit and the report structure.</li>
-   <li><strong>A separate AI reviewer.</strong> A model call isolated from the one that wrote the read scores the draft and returns specific corrections with its reasoning. The corrections are merged before delivery.</li>
-   <li><strong>A fail-closed delivery gate.</strong> If a check fails, or the reviewer returns no verdict, the report is held, the owner is alerted, and nothing reaches the user.</li>
-   <li><strong>Input guards (Profile Intel).</strong> A cost guard and an empty-input check stop broken or blank uploads before any API tokens are spent.</li>
-   <li><strong>A non-blocking end-of-run check (Profile Intel).</strong> If an internal step fails after a valid report has already gone out, the owner is alerted without holding back a report that passed every gate.</li>
-   <li><strong>Versioned nodes with rollback.</strong> Every production change records the version it replaces, so it can be reversed straight away if quality drops.</li>
-  </ul>
 
-  <figure class="cs-flow">
+   <h3>Checking what comes in: the input guards</h3>
+   <p>AI feeds on the data it receives, but even AI can fail to read some data.</p>
+   <p>The input guards, a <strong>cost guard</strong> and an <strong>empty-input check</strong>, stop broken or blank uploads before any API tokens are spent. <em>(Live on Profile Intel.)</em></p>
+
+   <h3>Checking what is in: the rule checks</h3>
+   <p>The rules validate the <strong>scoring-band logic</strong>, the <strong>claims-versus-evidence audit</strong> and the <strong>report structure</strong>.</p>
+   <p>Each rule was added specifically to better steer AI into getting it right, every time.</p>
+
+   <h3>The smart re-check: a distinct AI reviewer of the AI layer before it</h3>
+   <p>A separate AI, with no memory of the one that wrote the read, scores the draft and returns <strong>specific corrections, with its reasoning</strong>.</p>
+   <p>The corrections are merged and enforced in the following layers, before a report is actually delivered.</p>
+
+   <h3>The internal safe space for failure: if AI fails, delivery is blocked</h3>
+   <p>If one of the checks along the route fails, for any reason, or if the AI reviewer returns no verdict on key aspects, <strong>the report is held internally</strong>.</p>
+   <p>The owner is alerted that the report needs manual review, so the human in the loop steps in, and <strong>nothing reaches the user</strong>.</p>
+   <p><em>In AI engineering, this is called a fail-closed delivery gate.</em></p>
+
+   <h3>Continuous improvement: versioned nodes with rollback</h3>
+   <p>Each new rule, new blocker or new drift is recorded and fixed, so the engine is continuously updated.</p>
+   <p>Every production change records the version it replaces, so it can be <strong>reversed straight away</strong> if quality drops.</p>
+  </section>
+
+  <figure class="cs-figure">
+   <div class="frame">
    <svg viewBox="0 0 1000 380" role="img" aria-labelledby="flow-t flow-d" xmlns="http://www.w3.org/2000/svg">
     <title id="flow-t">How a ReLoop.me report reaches a user</title>
     <desc id="flow-d">A CV or job description goes to the AI read, then three rule checks (band logic, claims versus evidence, report structure), then an independent AI reviewer, then the delivery gate. If everything passes, the report is delivered. If anything fails, the report is held, the owner is alerted, and the owner fixes it and re-runs it. Every production change has a versioned rollback.</desc>
@@ -266,56 +267,84 @@
      <text x="30" y="354" font-size="14"><tspan font-weight="600">Versioned rollback</tspan><tspan fill="#33474e"> · every production change records the version it replaces, so it can be reversed straight away</tspan></text>
     </g>
    </svg>
+   </div>
    <figcaption>How a ReLoop.me report reaches a user. Anything that fails a check stops at the gate.</figcaption>
   </figure>
- </div>
-</section>
 
-<section class="section block-white cs-body" aria-labelledby="result-h">
- <div class="wrap">
-  <div class="section-head">
+  <section aria-labelledby="tilts-h">
+   <h2 id="tilts-h">The tilts</h2>
+   <p>Like a ReLoop.me report, the engine leans a certain way on purpose. Each lean, and why:</p>
+   <ul class="cs-tilts">
+    <li><strong>Late over wrong</strong><span>A held report costs a few hours. A wrong one costs a career or salary decision, and the user's trust.</span></li>
+    <li><strong>A person over a retry loop</strong><span>When a read fails, the owner looks at it. Re-running until something passes would hide the reason it failed.</span></li>
+    <li><strong>Rollback over a hotfix</strong><span>Every change can be reversed straight away, so a bad release is undone first and fixed second.</span></li>
+   </ul>
+  </section>
+
+  <section aria-labelledby="result-h">
    <h2 id="result-h">Result</h2>
-  </div>
-  <p>Nothing in ReLoop.me ships as raw model output, and every production change has a named rollback path. Figures from the live engine, as of 23 November 2026:</p>
-  <ul class="cs-stats">
-   <li><strong>573</strong><span>reads produced, 14 June to 21 November 2026: 324 Role Intel and 249 Profile Intel, test runs included</span></li>
-   <li><strong>12</strong><span>Role Intel reads held by the gate and logged, 3 October to 12 November 2026, each one stopped before anything was stored or emailed</span></li>
-   <li><strong>34% → 4%</strong><span>spread of the pay estimate on the same CV across repeat runs, before and after a stability fix (synthetic CVs, 21 November 2026)</span></li>
-  </ul>
+   <p>Nothing in ReLoop.me ships as raw AI output, and every production change has a named rollback path.</p>
+   <p>Figures from the live engine, as of <strong>23 November 2026</strong>:</p>
+   <ul class="cs-stats">
+    <li><strong>573</strong><span>reads produced, 14 June to 21 November 2026: 324 Role Intel and 249 Profile Intel, test runs included</span></li>
+    <li><strong>12</strong><span>Role Intel reads held by the gate and logged, 3 October to 12 November 2026, each one stopped before anything was stored or emailed</span></li>
+    <li><strong>34% → 4%</strong><span>spread of the pay estimate on the same CV across repeat runs, before and after a stability fix (synthetic CVs, 21 November 2026)</span></li>
+   </ul>
 
-  <h3>What the gate held, and why</h3>
-  <table class="cs-table">
-   <caption class="cs-note" style="text-align:left;caption-side:bottom;padding-top:0.5rem">Role Intel gate log, 3 October to 12 November 2026. All holds came from internal and test runs.</caption>
-   <thead><tr><th scope="col">Reason</th><th scope="col">Stage</th><th scope="col" class="n">Held</th></tr></thead>
-   <tbody>
-    <tr><td>The report copied 10 or more words verbatim from the job ad</td><td>Delivery gate</td><td class="n">4</td></tr>
-    <tr><td>A hiring number (applicants, time to fill, tenure) reached the report</td><td>Delivery gate</td><td class="n">3</td></tr>
-    <tr><td>The reviewer returned no delivery verdict, so the gate treated it as a fail</td><td>Reviewer merge</td><td class="n">2</td></tr>
-    <tr><td>The reviewer listed a blocker</td><td>Reviewer merge</td><td class="n">1</td></tr>
-    <tr><td>The original read couldn't be parsed</td><td>Reviewer merge</td><td class="n">1</td></tr>
-    <tr><td>The input was a programme overview, not a single role</td><td>Reviewer merge</td><td class="n">1</td></tr>
-   </tbody>
-  </table>
-  <p>In one case found in testing, the reviewer step broke on quoted text in a German job ad. The gate held the read instead of sending a broken one, and the fix was proved on a staging copy of the workflow before release.</p>
-  <p>The checks catch structural and logic errors. They don't make a model infallible. That's why held reports go to a person and every change can be rolled back.</p>
- </div>
-</section>
+   <h3>What the ReLoop.me gate held, and why</h3>
+   <table class="cs-table">
+    <caption>Role Intel gate log, 3 October to 12 November 2026. All holds came from internal and test runs.</caption>
+    <thead><tr><th scope="col">Reason</th><th scope="col">Stage</th><th scope="col" class="n">Held</th></tr></thead>
+    <tbody>
+     <tr><td>The report copied 10 or more words verbatim from the job ad</td><td>Delivery gate</td><td class="n">4</td></tr>
+     <tr><td>A hiring number (applicants, time to fill, tenure) reached the report</td><td>Delivery gate</td><td class="n">3</td></tr>
+     <tr><td>The reviewer returned no delivery verdict, so the gate treated it as a fail</td><td>Reviewer merge</td><td class="n">2</td></tr>
+     <tr><td>The reviewer listed a blocker</td><td>Reviewer merge</td><td class="n">1</td></tr>
+     <tr><td>The original read couldn't be parsed</td><td>Reviewer merge</td><td class="n">1</td></tr>
+     <tr><td>The input was a programme overview, not a single role</td><td>Reviewer merge</td><td class="n">1</td></tr>
+    </tbody>
+   </table>
 
-<section class="section block-panel cs-body" aria-labelledby="client-h">
- <div class="wrap">
-  <div class="section-head">
+   <h3>How this works in action</h3>
+   <p>Once, the reviewer step broke on quoted text in a German job ad.</p>
+   <p>The gate <strong>held the read</strong> instead of sending a broken one, and the fix was proved on a staging copy of the workflow before release.</p>
+   <p>The checks also catch structural and logic errors. <em>They don't make AI infallible.</em></p>
+   <p>That's why held reports go to a person, and every change can be rolled back.</p>
+  </section>
+
+  <section aria-labelledby="client-h">
    <h2 id="client-h">What a ZORRI client gets</h2>
-  </div>
-  <p>ZORRI builds AI workflow automation on the same architecture:</p>
-  <ul>
-   <li>Defined checks at each critical step of your product logic</li>
-   <li>An independent AI reviewer, isolated from the model that produced the output</li>
-   <li>A fail-closed gate that stops errors internally, with human-in-the-loop alerts so recurring errors are caught early and the system improves over time</li>
-  </ul>
-  <p>For any workflow where a wrong AI answer costs user trust or revenue. See the <a href="/ai-systems#orchestration">AI Orchestration Sprint</a> and the <a href="/ai-systems#workflow-audit">AI Workflow Audit</a>.</p>
-  <p class="cs-note">Stack: Claude API, n8n, Airtable, Supabase, Netlify. Built independently, AI-assisted.</p>
+   <p>ZORRI builds and recommends AI workflow automation running on the same architecture:</p>
+   <ul>
+    <li><strong>Defined checks</strong> at each critical step of your product logic</li>
+    <li><strong>An independent AI reviewer</strong>, isolated from the model that produced the output</li>
+    <li><strong>A fail-closed gate</strong> that stops errors internally, with human-in-the-loop alerts, so recurring errors are caught early and the system improves over time</li>
+   </ul>
+   <p>For any workflow where a wrong AI answer costs user trust or revenue. See the <a href="/ai-systems#orchestration">AI Orchestration Sprint</a> and the <a href="/ai-systems#workflow-audit">AI Workflow Audit</a>.</p>
+   <p class="cs-stamp">Sources: ReLoop.me engine records (Role Intel and Profile Intel tables, Role Intel gate log), read 23 Nov 2026 · repeat-run remeasurement on synthetic CVs, 21 Nov 2026 · stack: Claude API, n8n, Airtable, Supabase, Netlify · built independently, AI-assisted.</p>
+  </section>
+
  </div>
-</section>
+
+ <aside class="cs-side" aria-labelledby="info-h">
+  <h2 id="info-h">Project info</h2>
+  <dl>
+   <dt>Client</dt><dd>ReLoop.me, ZORRI's own product</dd>
+   <dt>Products</dt><dd><a class="chip profile" href="https://www.reloop.me/profile-intel?utm_source=zorri.ro&amp;utm_medium=case_study">Profile Intel</a><a class="chip role" href="https://www.reloop.me/role-intel?utm_source=zorri.ro&amp;utm_medium=case_study">Role Intel</a></dd>
+   <dt>Practice</dt><dd><a href="/ai-systems">AI orchestration</a></dd>
+   <dt>What we did</dt><dd>Input guards, rule checks, AI reviewer, fail-closed gate, versioned rollback</dd>
+   <dt>Stack</dt><dd>Claude API, n8n, Airtable, Supabase, Netlify</dd>
+   <dt>Published</dt><dd><time datetime="2026-11-23">23 November 2026</time></dd>
+  </dl>
+  <a class="button button-line" href="https://www.reloop.me/?utm_source=zorri.ro&amp;utm_medium=case_study">Visit ReLoop.me ↗</a>
+ </aside>
+</div>
+
+<nav class="cs-nav" aria-label="Case studies">
+ <span class="muted">First case study</span>
+ <a class="all" href="/case-studies/">All case studies</a>
+ <span class="next muted">More coming</span>
+</nav>
 </article>
 
 <section class="contact" id="contact" aria-labelledby="contact-h">
@@ -326,6 +355,7 @@
  </div>
 </section>
 </main>
+<a class="to-top" href="#top" aria-label="Back to top">↑</a>
 <footer class="site-footer">
  <div class="wrap">
   <div>
@@ -342,8 +372,9 @@
  </div>
 </footer>
 <script>
-(function(){var d="zorri"+"."+"ro";document.querySelectorAll("a[data-mail]").forEach(function(a){var u=a.getAttribute("data-mail-user")||"hello",s=a.getAttribute("data-mail");a.href="mai"+"lto:"+u+"@"+d+(s?"?subject="+encodeURIComponent(s):"");});})();
+(function(){var d="zorri"+"."+"ro";document.querySelectorAll("a[data-mail]").forEach(function(a){var u=a.getAttribute("data-mail-user")||"hello",s=a.getAttribute("data-mail");a.href="mai"+"lto:"+u+"@"+d+(s?"?subject="+encodeURIComponent(s):"");});
+var t=document.querySelector(".to-top");if(t){var f=function(){t.classList.toggle("show",window.scrollY>600);};window.addEventListener("scroll",f,{passive:true});f();}})();
 </script>
 </body>
 </html>
-<!-- ZORRI /case-studies/ai-quality-control — VERSION 1.0.0 END -->
+<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.0.0 END -->
