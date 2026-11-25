@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.3.0 -->
-<!-- 2.3.0 (2026-11-23): tilts drawn as three see-saws (inline SVG, to be swapped for the Canva illustration); new "The logic travels" part in What a ZORRI client gets: layer-by-layer table (ReLoop.me vs another AI product) and the two ways to use it. Everything else unchanged from 2.2.0.
+<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.4.0 -->
+<!-- 2.4.0 (2026-11-25): visible byline (Ligia Adam, founder of ZORRI) with Person author in JSON-LD next to the organisation; LinkedIn-safe featured image 1200x630 (og/twitter image, no crop of the illustration title); new "Checks need checks" paragraph in How this works in action (the reviewer itself erred, a rule above it now stops it); dateModified 25 Nov. Everything else unchanged from 2.3.0.
+     2.3.0 (2026-11-23): tilts drawn as three see-saws (inline SVG, to be swapped for the Canva illustration); new "The logic travels" part in What a ZORRI client gets: layer-by-layer table (ReLoop.me vs another AI product) and the two ways to use it. Everything else unchanged from 2.2.0.
      2.2.0 (2026-11-23): title back to "wrong AI answers" (drift is case study 2's subject); problem quote aligned with the illustration and the tilts ("than a late one"). Everything else unchanged from 2.1.0.
      2.1.0 (2026-11-23): founder's edits applied: new H1 ("AI drift"), context / problem / solution eyebrows, B2C/B2B delivery line, rewritten context and problem copy, SUBMIT/READ/DELIVER labels, gate illustration added, sidebar "Deliverables" and stack + GitHub, Cloudflare. Everything else unchanged from 2.0.0.
      2.0.0 (2026-11-23): rewritten in the founder's own text; Bridge-style portfolio layout (assets/case-study.css 1.0.0):
@@ -14,6 +15,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Case study: how to stop wrong AI answers before they reach users — ZORRI</title>
 <meta name="description" content="How ReLoop.me's AI reports pass input guards, rule checks, an independent AI reviewer and a fail-closed delivery gate before anyone sees them. 573 reads produced, 12 held by the gate.">
+<meta name="author" content="Ligia Adam, ZORRI">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://zorri.ro/case-studies/ai-quality-control">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary">
@@ -25,12 +27,16 @@
 <meta property="og:title" content="Case study: how to stop wrong AI answers before they reach users">
 <meta property="og:description" content="Input guards, rule checks, an independent AI reviewer and a fail-closed delivery gate for ReLoop.me's AI reports.">
 <meta property="og:url" content="https://zorri.ro/case-studies/ai-quality-control">
-<meta property="og:image" content="https://zorri.ro/assets/img/case-studies/every-report-meets-the-gate.jpg">
-<meta property="og:image:width" content="1680">
-<meta property="og:image:height" content="944">
+<meta property="og:image" content="https://zorri.ro/assets/img/case-studies/ai-quality-control-featured.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Every report meets the gate first: a delivery gate holds a wrong AI report and alerts the owner, good reports reach the user.">
 <meta property="og:locale" content="en_GB">
 <meta property="article:published_time" content="2026-11-23">
+<meta property="article:modified_time" content="2026-11-25">
+<meta property="article:author" content="https://www.linkedin.com/in/ligiaadam">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zorri.ro/assets/img/case-studies/ai-quality-control-featured.jpg">
 <link rel="preload" href="/assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/zorri.css">
@@ -69,9 +75,12 @@
    "description": "How ReLoop.me's capability intelligence reports pass input guards, rule checks, an independent AI reviewer and a fail-closed delivery gate before delivery, with figures from the live engine.",
    "articleSection": "Case studies",
    "datePublished": "2026-11-23",
-   "dateModified": "2026-11-23",
+   "dateModified": "2026-11-25",
    "inLanguage": "en",
-   "author": { "@id": "https://zorri.ro/#org" },
+   "author": [
+    { "@type": "Person", "@id": "https://zorri.ro/about#ligia", "name": "Ligia Adam", "jobTitle": "Founder", "worksFor": { "@id": "https://zorri.ro/#org" }, "sameAs": ["https://www.linkedin.com/in/ligiaadam", "https://github.com/LigiaAdam"] },
+    { "@id": "https://zorri.ro/#org" }
+   ],
    "publisher": { "@id": "https://zorri.ro/#org" },
    "about": [
     { "@id": "https://reloop.me/#product" },
@@ -84,7 +93,7 @@
     { "@type": "WebPage", "name": "ReLoop.me Role Intel", "url": "https://www.reloop.me/role-intel" }
    ],
    "mainEntityOfPage": "https://zorri.ro/case-studies/ai-quality-control",
-   "image": "https://zorri.ro/assets/img/case-studies/every-report-meets-the-gate.jpg",
+   "image": ["https://zorri.ro/assets/img/case-studies/ai-quality-control-featured.jpg", "https://zorri.ro/assets/img/case-studies/every-report-meets-the-gate.jpg"],
    "isPartOf": { "@id": "https://zorri.ro/#website" }
   },
   {
@@ -143,6 +152,7 @@
   <p class="descriptor"><a href="/case-studies/">Case study</a> · AI orchestration</p>
   <h1>How to stop wrong AI answers before they reach users</h1>
   <p class="line">Case study on the automated, fail-closed quality control built for ReLoop.me.</p>
+  <p class="descriptor" style="margin-top:var(--s2)">By <a href="https://www.linkedin.com/in/ligiaadam" rel="author">Ligia Adam</a>, founder of ZORRI · <time datetime="2026-11-23">23 November 2026</time></p>
  </div>
  <svg class="cs-loop" viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
   <path d="M0 40 C 200 4, 360 4, 560 32 S 960 62, 1200 22" fill="none" stroke="#19b7a5" stroke-opacity="0.16" stroke-width="10" stroke-linecap="round"/>
@@ -353,6 +363,8 @@
    <h3>How this works in action</h3>
    <p>Once, the reviewer step broke on quoted text in a German job ad.</p>
    <p>The gate <strong>held the read</strong> instead of sending a broken one, and the fix was proved on a staging copy of the workflow before release.</p>
+   <p><strong>Checks need checks.</strong> In November 2026 the reviewer itself got one wrong: on a Profile Intel read it moved management experience onto the individual-contributor ladder, which priced the profile too low.</p>
+   <p>The fix wasn't a better-worded reviewer. It was a rule above it: the reviewer can no longer change a seniority track, only flag it.</p>
    <p>The checks also catch structural and logic errors. <em>They don't make AI infallible.</em></p>
    <p>That's why held reports go to a person, and every change can be rolled back.</p>
   </section>
@@ -442,4 +454,4 @@ var t=document.querySelector(".to-top");if(t){var f=function(){t.classList.toggl
 </script>
 </body>
 </html>
-<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.3.0 END -->
+<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.4.0 END -->
