@@ -1,4 +1,5 @@
-// ZORRI consent + Google Analytics — VERSION 1.0.0
+// ZORRI consent + Google Analytics — VERSION 1.1.0
+// 1.1.0 (2026-11-25): banner links to /privacy; footer gets a "Privacy" link next to "Cookie settings". Consent logic unchanged from 1.0.0.
 // 1.0.0 (2026-11-25): first version. GA4 property "ZORRI – zorri.ro" (G-HQ5BXEPBLE).
 //   Basic consent mode: gtag.js is NOT loaded and no cookies are set until the visitor clicks Accept.
 //   Choice kept in localStorage ("zorri-consent" = granted | denied). Decline = nothing loads.
@@ -46,7 +47,7 @@
       ".zc{position:fixed;left:var(--gutter,1.25rem);right:var(--gutter,1.25rem);bottom:1rem;z-index:1000;max-width:34rem;margin-left:auto;" +
       "background:var(--white,#fff);color:var(--text,#33474e);border:1px solid var(--line,#dde3e4);border-radius:18px;" +
       "box-shadow:0 12px 40px rgba(23,67,74,.16);padding:1.25rem 1.5rem;font-family:var(--sans,sans-serif);font-size:.9375rem;line-height:1.55}" +
-      ".zc p{margin:0 0 1rem}.zc strong{color:var(--ink,#1e3a43)}" +
+      ".zc p{margin:0 0 1rem}.zc p a{color:var(--ink,#1e3a43)}.zc strong{color:var(--ink,#1e3a43)}" +
       ".zc-b{display:flex;gap:.75rem;flex-wrap:wrap}" +
       ".zc button{font:inherit;font-weight:600;cursor:pointer;border-radius:999px;padding:.6rem 1.25rem;border:1px solid var(--ink,#1e3a43)}" +
       ".zc .zc-a{background:var(--ink,#1e3a43);color:#fff}.zc .zc-d{background:transparent;color:var(--ink,#1e3a43)}" +
@@ -65,7 +66,7 @@
     d.setAttribute("aria-label", "Cookie consent");
     d.innerHTML =
       "<p><strong>Analytics cookies?</strong> With your OK, zorri.ro uses Google Analytics to count visits and see which pages are read. " +
-      "No ads, no tracking across other sites. Decline and nothing is loaded.</p>" +
+      "No ads, no tracking across other sites. Decline and nothing is loaded. <a href=\"/privacy\">Privacy</a></p>" +
       "<div class=\"zc-b\"><button type=\"button\" class=\"zc-a\">Accept</button><button type=\"button\" class=\"zc-d\">Decline</button></div>";
     document.body.appendChild(d);
     d.querySelector(".zc-a").addEventListener("click", function () { save("granted"); d.remove(); loadGA(); });
@@ -75,6 +76,14 @@
   function footerLink() {
     var ul = document.querySelector(".site-footer ul");
     if (!ul || ul.querySelector(".zc-open")) return;
+    if (!ul.querySelector('a[href="/privacy"]')) {
+      var lp = document.createElement("li");
+      var ap = document.createElement("a");
+      ap.href = "/privacy";
+      ap.textContent = "Privacy";
+      lp.appendChild(ap);
+      ul.appendChild(lp);
+    }
     var li = document.createElement("li");
     var a = document.createElement("a");
     a.href = "#";
@@ -95,4 +104,4 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 })();
-// ZORRI consent + Google Analytics — VERSION 1.0.0 END
+// ZORRI consent + Google Analytics — VERSION 1.1.0 END
