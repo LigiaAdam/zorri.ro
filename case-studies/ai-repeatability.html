@@ -1,58 +1,145 @@
 <!DOCTYPE html>
-<!-- ZORRI /case-studies/ai-repeatability — VERSION 0.9.0 DRAFT -->
-<!-- 0.9.0 (2026-11-23): draft for review, not linked from the site and kept out of the index and sitemap.
-     Founder's text, checked against the 1 Oct 2026 30x3 repeat-run test, the methodology briefs log (5 Oct 2026)
-     and ReLoop.me Benchmark Notes No. 1 (20 Nov 2026). Items in <mark class="verify"> must be confirmed or cut
-     before 1.0.0. Template: assets/case-study.css 1.0.0. -->
+<!-- ZORRI /case-studies/ai-repeatability — VERSION 1.0.0 -->
+<!-- 1.0.0 (2026-11-27): ready to publish. Brought to the case study 1 (2.5.0) template: visible byline with Person author in JSON-LD,
+     LinkedIn-safe featured image 1200x630 (og/twitter), article dates, WebSite + FAQPage in JSON-LD, consent.js (GA behind the banner,
+     privacy link), robots index. The three draft checks resolved against reloop.me/methodology (read 27 Nov 2026):
+     "Calibrated or Estimated" confirmed on the page; Role Quick Check now cites both runs (24 of 24 in October on the methodology page,
+     23 of 24 in Benchmark Notes No. 1, Nov 2026); the 21 Nov remeasurement labelled internal, on synthetic CVs, as case study 1 already does.
+     Also corrected to match the methodology page: "which of two role types leads" (was "primary archetype in hybrid roles");
+     capability wording varies, with the band figure 93% vs 87% and 92% for two general models (was "no more repeatable than a
+     general-purpose model", which the page does not say); "results of our repeatability tests" (was "raw benchmarks").
+     Agent-vs-pipeline illustration: two labels moved off the path and the divider. Context / solution eyebrows as in case study 1.
+     Kept from 0.9.0: founder's text, headings, both illustrations and captions, stats, tilts of the argument, client offer, sources, links and UTM tags.
+     0.9.0 (2026-11-23): draft for review, not linked, noindex. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Case study: measuring and engineering AI repeatability — ZORRI</title>
-<meta name="description" content="How ReLoop.me measured whether its AI gives the same verdict twice, published the results, and engineered out the drift: fixed vocabulary, calculated pay logic and an automated repeat-run test.">
-<meta name="robots" content="noindex, nofollow">
+<title>Case study: how to measure and engineer AI repeatability — ZORRI</title>
+<meta name="description" content="How ReLoop.me measured whether its AI gives the same verdict twice, published the results, and engineered out the drift: fixed vocabulary, calculated pay logic and an automated repeat-run test. 30 of 30 identical role types.">
+<meta name="author" content="Ligia Adam, ZORRI">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://zorri.ro/case-studies/ai-repeatability">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/zorri-logo.png">
 <meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ZORRI">
-<meta property="og:title" content="Case study: measuring and engineering AI repeatability">
+<meta property="og:title" content="Case study: how to measure and engineer AI repeatability">
+<meta property="og:description" content="Same input, same-ish answer from AI, every time. Fixed vocabulary, calculated pay logic and a repeat-run test for ReLoop.me.">
 <meta property="og:url" content="https://zorri.ro/case-studies/ai-repeatability">
-<meta property="og:image" content="https://zorri.ro/assets/img/case-studies/two-identical-cvs.png">
+<meta property="og:image" content="https://zorri.ro/assets/img/case-studies/ai-repeatability-featured.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Two identical CVs walk into an evaluator: a vibes-based agent rates the same CV Expert one day and something else the next; a boring code node says Demonstrated, same as yesterday, same as tomorrow.">
 <meta property="og:locale" content="en_GB">
+<meta property="article:published_time" content="2026-11-27">
+<meta property="article:modified_time" content="2026-11-27">
+<meta property="article:author" content="https://www.linkedin.com/in/ligiaadam">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zorri.ro/assets/img/case-studies/ai-repeatability-featured.jpg">
 <link rel="preload" href="/assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/zorri.css">
 <link rel="stylesheet" href="/assets/case-study.css">
-<style>mark.verify { background: #fde8e4; color: inherit; padding: 0 0.2em; border-radius: 4px; box-shadow: inset 0 -2px 0 #b8612f; }</style>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
  "@graph": [
-  { "@type": ["Organization", "ProfessionalService"], "@id": "https://zorri.ro/#org", "name": "ZORRI", "legalName": "ZORRI S.R.L.", "url": "https://zorri.ro/", "logo": "https://zorri.ro/assets/zorri-logo.png", "owns": { "@id": "https://reloop.me/#product" } },
-  { "@type": ["Product", "SoftwareApplication"], "@id": "https://reloop.me/#product", "name": "ReLoop.me", "url": "https://www.reloop.me/", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "brand": { "@id": "https://zorri.ro/#org" }, "description": "Capability intelligence platform for nonlinear careers and skills-based hiring. Profile Intel reads a CV; Role Intel reads a job description." },
+  {
+   "@type": ["Organization", "ProfessionalService"],
+   "@id": "https://zorri.ro/#org",
+   "name": "ZORRI",
+   "legalName": "ZORRI S.R.L.",
+   "url": "https://zorri.ro/",
+   "logo": "https://zorri.ro/assets/zorri-logo.png",
+   "email": "hello@zorri.ro",
+   "description": "ZORRI is a studio at the intersection of AI systems design, B2B marketing and strategy, based in Bucharest, Romania. ZORRI builds and operates ReLoop.me.",
+   "address": { "@type": "PostalAddress", "addressLocality": "Bucharest", "addressCountry": "RO" },
+   "owns": { "@id": "https://reloop.me/#product" }
+  },
+  {
+   "@type": ["Product", "SoftwareApplication"],
+   "@id": "https://reloop.me/#product",
+   "name": "ReLoop.me",
+   "url": "https://www.reloop.me/",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Web",
+   "brand": { "@id": "https://zorri.ro/#org" },
+   "description": "Capability intelligence platform for nonlinear careers and skills-based hiring. Profile Intel reads a CV; Role Intel reads a job description. Built and operated by ZORRI S.R.L."
+  },
   {
    "@type": "Article",
    "@id": "https://zorri.ro/case-studies/ai-repeatability#article",
    "headline": "How to measure and engineer AI repeatability",
    "alternativeHeadline": "Same input, same-ish answer from AI, every time",
-   "description": "How ReLoop.me benchmarked output consistency, published the results, and engineered out probabilistic drift.",
+   "description": "How ReLoop.me benchmarked the consistency of its capability intelligence reads, published the results, and engineered out probabilistic drift with a fixed vocabulary, calculated pay logic and an automated repeat-run test.",
    "articleSection": "Case studies",
+   "datePublished": "2026-11-27",
+   "dateModified": "2026-11-27",
    "inLanguage": "en",
-   "author": { "@id": "https://zorri.ro/#org" },
+   "author": [
+    { "@type": "Person", "@id": "https://zorri.ro/about#ligia", "name": "Ligia Adam", "jobTitle": "Founder", "worksFor": { "@id": "https://zorri.ro/#org" }, "sameAs": ["https://www.linkedin.com/in/ligiaadam", "https://github.com/LigiaAdam"] },
+    { "@id": "https://zorri.ro/#org" }
+   ],
    "publisher": { "@id": "https://zorri.ro/#org" },
-   "about": [ { "@id": "https://reloop.me/#product" }, { "@type": "Thing", "name": "AI repeatability" }, { "@type": "Thing", "name": "LLM evaluation" } ],
-   "mentions": [ { "@type": "WebPage", "name": "ReLoop.me methodology", "url": "https://www.reloop.me/methodology" } ],
-   "image": "https://zorri.ro/assets/img/case-studies/two-identical-cvs.png"
+   "about": [
+    { "@id": "https://reloop.me/#product" },
+    { "@type": "Thing", "name": "AI repeatability" },
+    { "@type": "Thing", "name": "LLM evaluation" },
+    { "@type": "Thing", "name": "AI drift" }
+   ],
+   "mentions": [
+    { "@type": "WebPage", "name": "ReLoop.me methodology", "url": "https://www.reloop.me/methodology" },
+    { "@type": "WebPage", "name": "ReLoop.me Profile Intel", "url": "https://www.reloop.me/profile-intel" },
+    { "@type": "WebPage", "name": "ReLoop.me Role Intel", "url": "https://www.reloop.me/role-intel" }
+   ],
+   "mainEntityOfPage": "https://zorri.ro/case-studies/ai-repeatability",
+   "image": ["https://zorri.ro/assets/img/case-studies/ai-repeatability-featured.jpg", "https://zorri.ro/assets/img/case-studies/two-identical-cvs.png", "https://zorri.ro/assets/img/case-studies/agent-vs-pipeline.png"],
+   "isPartOf": { "@id": "https://zorri.ro/#website" }
   },
-  { "@type": "BreadcrumbList", "itemListElement": [
+  {
+   "@type": "WebSite",
+   "@id": "https://zorri.ro/#website",
+   "url": "https://zorri.ro/",
+   "name": "ZORRI",
+   "publisher": { "@id": "https://zorri.ro/#org" },
+   "inLanguage": "en"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "ZORRI", "item": "https://zorri.ro/" },
     { "@type": "ListItem", "position": 2, "name": "Case studies", "item": "https://zorri.ro/case-studies/" },
-    { "@type": "ListItem", "position": 3, "name": "AI repeatability for ReLoop.me", "item": "https://zorri.ro/case-studies/ai-repeatability" } ] }
+    { "@type": "ListItem", "position": 3, "name": "AI repeatability for ReLoop.me", "item": "https://zorri.ro/case-studies/ai-repeatability" }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://zorri.ro/case-studies/ai-repeatability#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is AI repeatability?",
+     "acceptedAnswer": { "@type": "Answer", "text": "Whether an AI system gives the same verdict when it receives the exact same input again. It is measured by running the same input many times and comparing every output field." }
+    },
+    {
+     "@type": "Question",
+     "name": "Can better prompting fix inconsistent AI outputs?",
+     "acceptedAnswer": { "@type": "Answer", "text": "Not on its own. ReLoop.me reduced drift structurally: a fixed vocabulary the model must map to, pay figures calculated from lookup tables instead of generated, and an automated repeat-run test that measures what still moves." }
+    },
+    {
+     "@type": "Question",
+     "name": "What is ReLoop.me?",
+     "acceptedAnswer": { "@type": "Answer", "text": "ReLoop.me is a capability intelligence platform for nonlinear careers and skills-based hiring, built and operated by ZORRI. Profile Intel reads a CV; Role Intel reads a job description." }
+    }
+   ]
+  }
  ]
 }
 </script>
+<script src="/assets/consent.js" defer></script>
 </head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
@@ -69,6 +156,7 @@
   <p class="descriptor"><a href="/case-studies/">Case study</a> · AI orchestration · evaluation</p>
   <h1>How to measure and engineer AI repeatability</h1>
   <p class="line">Same input, same-ish answer from AI, every time. How ReLoop.me benchmarked output consistency, published the results, and engineered out probabilistic drift.</p>
+  <p class="descriptor" style="margin-top:var(--s2)">By <a href="https://www.linkedin.com/in/ligiaadam" rel="author">Ligia Adam</a>, founder of ZORRI · <time datetime="2026-11-27">27 November 2026</time></p>
  </div>
  <svg class="cs-loop" viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
   <path d="M0 40 C 200 4, 360 4, 560 32 S 960 62, 1200 22" fill="none" stroke="#19b7a5" stroke-opacity="0.16" stroke-width="10" stroke-linecap="round"/>
@@ -83,7 +171,9 @@
 
   <section aria-labelledby="challenge-h">
    <h2 id="challenge-h">The challenge: when the same input produces a different verdict</h2>
+   <p class="descriptor">First, some context</p>
    <p><a href="https://www.reloop.me/?utm_source=zorri.ro&amp;utm_medium=case_study">ReLoop.me</a> evaluates CVs and job descriptions to produce structured capability intelligence (<a href="https://www.reloop.me/profile-intel?utm_source=zorri.ro&amp;utm_medium=case_study">Profile Intel</a> and <a href="https://www.reloop.me/role-intel?utm_source=zorri.ro&amp;utm_medium=case_study">Role Intel</a>), including <strong>role classification</strong>, <strong>seniority grading</strong> and <strong>market compensation signals</strong>.</p>
+   <p class="descriptor">The problem?</p>
    <p>General-purpose AI models are inherently probabilistic.</p>
    <p>Ask any chat AI to evaluate the exact same CV twice, and it can return a different seniority tier, or a wildly different salary estimate, on the second try.</p>
    <blockquote class="cs-quote"><p>A verdict that shifts on a re-run undermines trust, and cannot support a real decision.</p></blockquote>
@@ -97,6 +187,7 @@
   </figure>
 
   <section aria-labelledby="built-h">
+   <p class="descriptor">The solution</p>
    <h2 id="built-h">What we built</h2>
 
    <h3>A fixed, standardised vocabulary</h3>
@@ -107,7 +198,7 @@
    <h3>Deterministic, calculated pay logic</h3>
    <p>Generic AI is probabilistic. It will give you the average, most recent values of whatever it weights most when evaluating the data. We approached capability market value differently.</p>
    <p><strong>We decoupled compensation figures from generative guessing.</strong></p>
-   <p>Inside ReLoop.me, pay bands are pulled programmatically from structured lookup tables indexed by role family, location and seniority tier, <mark class="verify">each explicitly labelled as Calibrated or Estimated</mark>.</p>
+   <p>Inside ReLoop.me, pay bands are pulled programmatically from structured lookup tables indexed by role family, location and seniority tier, each explicitly labelled as <strong>Calibrated</strong> or <strong>Estimated</strong>.</p>
    <p>This way, the deterministic part works across nonlinear careers as well. <em>For tailored, not averaged, measures.</em></p>
 
    <h3>An automated AI drift test</h3>
@@ -117,7 +208,7 @@
 
    <h3>Radical transparency, via a public methodology page</h3>
    <p>At ZORRI, we believe AI governance needs human accountability.</p>
-   <p>So we publish the raw repeatability benchmarks we run internally, <strong>including the results where variance still occurs</strong>, at <a href="https://www.reloop.me/methodology?utm_source=zorri.ro&amp;utm_medium=case_study">reloop.me/methodology</a>.</p>
+   <p>So we publish the results of the repeatability tests we run, <strong>including where variance still occurs</strong>, at <a href="https://www.reloop.me/methodology?utm_source=zorri.ro&amp;utm_medium=case_study">reloop.me/methodology</a>.</p>
   </section>
 
   <figure class="cs-figure">
@@ -127,19 +218,19 @@
 
   <section aria-labelledby="result-h">
    <h2 id="result-h">Results</h2>
-   <p>Self-run repeat-run tests, published at reloop.me/methodology. One CV and one job ad, 30 runs each, on production settings, 1 October 2026:</p>
+   <p>Self-run repeat-run tests on production settings, 1 October 2026: one CV and one job ad, 30 runs each, against two general-purpose models. Published at <a href="https://www.reloop.me/methodology?utm_source=zorri.ro&amp;utm_medium=case_study">reloop.me/methodology</a>:</p>
    <ul class="cs-stats">
     <li><strong>30 / 30</strong><span>role type, identical on the CV and on the job ad</span></li>
-    <li><strong>30 / 30</strong><span>CV seniority, identical. Two general-purpose models shifted verdict in 6 and 3 of 30 runs</span></li>
-    <li><strong>93%</strong><span>of job-ad capabilities kept the same band across repeat runs</span></li>
+    <li><strong>30 / 30</strong><span>CV seniority, identical. The two general-purpose models shifted verdict in 6 and 3 of 30 runs</span></li>
+    <li><strong>93%</strong><span>of job-ad capabilities kept the same band across repeat runs, against 87% and 92% for the two general-purpose models</span></li>
    </ul>
    <ul>
-    <li><strong>Role Quick Check:</strong> matched the expected answer in <strong>23 of 24</strong> reads across 12 distinct job ads <mark class="verify">(ReLoop.me Benchmark Notes No. 1; your draft said 24 of 24)</mark>.</li>
+    <li><strong>Role Quick Check:</strong> matched the expected answer in <strong>24 of 24</strong> runs on a fixed set of 12 job ads in October, and in <strong>23 of 24</strong> reads in the November re-test (ReLoop.me Benchmark Notes No. 1).</li>
     <li><strong>No echo of self-labels:</strong> when a CV rated its own capabilities, those self-ratings appeared in <strong>0 of 8</strong> Profile Intel runs, against 4 to 8 of 8 for general-purpose models.</li>
    </ul>
 
    <h3>Post-calibration improvements</h3>
-   <p>Internal remeasurement, 21 November 2026, synthetic CVs <mark class="verify">(add to reloop.me/methodology before this goes live)</mark>:</p>
+   <p>Internal remeasurement on synthetic CVs, 21 November 2026:</p>
    <ul>
     <li><strong>Pay spread on the same CV:</strong> reduced from 34% to 4%.</li>
     <li><strong>Seniority stability against title inflation:</strong> stable in 3 of 3 runs. Changing a job title alone no longer moves the assessed seniority level.</li>
@@ -148,8 +239,8 @@
 
    <h3>What still varies inside the ReLoop.me engine</h3>
    <p>Running a live, AI-powered system means constantly adapting to change. A lot of things vary, and we found it's best to keep checking.</p>
-   <p>The most recent tests show that, on genuinely ambiguous job ads, <strong>seniority grading</strong> and <strong>the primary archetype in hybrid roles</strong> can still vary between full runs. On the 1 October job ad, seniority read Senior Manager in 22 of 30 runs and Senior in 8.</p>
-   <p><strong>Natural-language phrasing</strong> also shifts from run to run. On capability wording, ReLoop.me is no more repeatable than a general-purpose model, and the methodology page says so.</p>
+   <p>The most recent tests show that, on genuinely ambiguous job ads, <strong>seniority grading</strong> and <strong>which of two role types leads</strong> can still vary between full runs. On the 1 October job ad, seniority read Senior Manager in 22 of 30 runs and Senior in 8.</p>
+   <p><strong>Natural-language phrasing</strong> also shifts from run to run: the wording of a capability changes even when its level and band hold. That's why the methodology page advises leaning on the level and band, not the exact phrase.</p>
    <p>Both limitations are documented openly on the <a href="https://www.reloop.me/methodology?utm_source=zorri.ro&amp;utm_medium=case_study">methodology page</a>, and we're working on them.</p>
   </section>
 
@@ -163,7 +254,7 @@
     <li><strong>Structural stabilisation fixes</strong>: fixed vocabularies, deterministic lookup tables and schema-constrained outputs, to turn probabilistic guesses into repeatable business logic</li>
    </ul>
    <p>Built for any workflow where inconsistent AI verdicts erode customer trust or operational reliability. See the <a href="/ai-systems#workflow-audit">AI Workflow Audit</a>.</p>
-   <p class="cs-stamp">Sources: ReLoop.me repeat-run test, 30 runs × 3 arms per product, 1 Oct 2026 · methodology briefs log, 5 Oct 2026 · ReLoop.me Benchmark Notes No. 1 · internal remeasurement on synthetic CVs, 21 Nov 2026 · stack: Claude API, n8n, Airtable, Supabase, Netlify · built independently, AI-assisted.</p>
+   <p class="cs-stamp">Sources: ReLoop.me repeat-run test, 30 runs × 3 arms per product, 1 Oct 2026 · reloop.me/methodology (read 27 Nov 2026) · methodology briefs log, 5 Oct 2026 · ReLoop.me Benchmark Notes No. 1, Nov 2026 · internal remeasurement on synthetic CVs, 21 Nov 2026 · stack: Claude API, n8n, Airtable, Supabase, Netlify · built independently, AI-assisted.</p>
   </section>
 
  </div>
@@ -174,9 +265,9 @@
    <dt>Client</dt><dd>ReLoop.me, ZORRI's own product</dd>
    <dt>Products</dt><dd><a class="chip profile" href="https://www.reloop.me/profile-intel?utm_source=zorri.ro&amp;utm_medium=case_study">Profile Intel</a><a class="chip role" href="https://www.reloop.me/role-intel?utm_source=zorri.ro&amp;utm_medium=case_study">Role Intel</a></dd>
    <dt>Practice</dt><dd><a href="/ai-systems">AI orchestration</a></dd>
-   <dt>What we did</dt><dd>Fixed vocabulary, calculated pay logic, repeat-run test harness, public methodology</dd>
-   <dt>Stack</dt><dd>Claude API, n8n, Airtable, Supabase, Netlify</dd>
-   <dt>Status</dt><dd>Draft, not published</dd>
+   <dt>Deliverables</dt><dd>Fixed vocabulary, calculated pay logic, repeat-run test harness, public methodology</dd>
+   <dt>Stack</dt><dd>Claude API, n8n, Airtable, Supabase, Netlify, GitHub, Cloudflare</dd>
+   <dt>Published</dt><dd><time datetime="2026-11-27">27 November 2026</time></dd>
   </dl>
   <a class="button button-line" href="https://www.reloop.me/methodology?utm_source=zorri.ro&amp;utm_medium=case_study">Read the methodology ↗</a>
  </aside>
@@ -219,4 +310,4 @@ var t=document.querySelector(".to-top");if(t){var f=function(){t.classList.toggl
 </script>
 </body>
 </html>
-<!-- ZORRI /case-studies/ai-repeatability — VERSION 0.9.0 DRAFT END -->
+<!-- ZORRI /case-studies/ai-repeatability — VERSION 1.0.0 END -->
