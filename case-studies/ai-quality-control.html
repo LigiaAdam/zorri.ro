@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.6.0 -->
+<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.7.0 -->
+<!-- 2.7.0 (2026-11-27): external-review feedback. Answer-first 'Key terms' block (AI quality control, fail-closed AI system, human in the loop, independent AI reviewer) before the challenge; the architecture named 'the ZORRI fail-closed architecture' with its six layers listed under What we built, and the name carried into 'The logic travels'; 'The tilts' renamed 'The ZORRI reliability principles' (see-saws and texts unchanged); one line on what is different (measured, logged holds) in the client section; search phrases (AI hallucinations, human in the loop) in meta and JSON-LD; FAQPage +3. Everything else unchanged from 2.6.0. -->
 <!-- 2.6.0 (2026-11-27): "More coming" in the case-study nav replaced by a next link to case study 2 (AI repeatability). Everything else unchanged from 2.5.0. -->
 <!-- 2.5.0 (2026-11-25): Google Analytics (G-HQ5BXEPBLE) behind a consent banner via /assets/consent.js 1.0.0; nothing loads before Accept. Everything else unchanged from 2.4.0. -->
 <!-- 2.4.0 (2026-11-25): visible byline (Ligia Adam, founder of ZORRI) with Person author in JSON-LD next to the organisation; LinkedIn-safe featured image 1200x630 (og/twitter image, no crop of the illustration title); new "Checks need checks" paragraph in How this works in action (the reviewer itself erred, a rule above it now stops it); dateModified 25 Nov. Everything else unchanged from 2.3.0.
@@ -16,7 +17,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Case study: how to stop wrong AI answers before they reach users — ZORRI</title>
-<meta name="description" content="How ReLoop.me's AI reports pass input guards, rule checks, an independent AI reviewer and a fail-closed delivery gate before anyone sees them. 573 reads produced, 12 held by the gate.">
+<meta name="description" content="AI quality control in production: how ReLoop.me keeps AI hallucinations from users with input guards, rule checks, an independent AI reviewer, a fail-closed delivery gate and a human in the loop. 573 reads, 12 held.">
 <meta name="author" content="Ligia Adam, ZORRI">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://zorri.ro/case-studies/ai-quality-control">
@@ -43,6 +44,16 @@
 <link rel="preload" href="/assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/zorri.css">
 <link rel="stylesheet" href="/assets/case-study.css">
+<style>
+.cs-terms { background: var(--panel); border-radius: 24px; padding: var(--s3) var(--s4); margin-bottom: var(--s4); }
+.cs-terms h2 { font-size: var(--t-h3); margin-bottom: var(--s2); }
+.cs-terms dl { margin: 0; }
+.cs-terms dt { font-weight: 600; margin-top: var(--s2); }
+.cs-terms dt:first-child { margin-top: 0; }
+.cs-terms dd { margin: 0.25rem 0 0; }
+.cs-method { padding-left: 1.25rem; }
+.cs-method li { margin-bottom: 0.5rem; }
+</style>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -88,7 +99,10 @@
     { "@id": "https://reloop.me/#product" },
     { "@type": "Thing", "name": "AI quality control" },
     { "@type": "Thing", "name": "Fail-closed delivery gate" },
-    { "@type": "Thing", "name": "LLM evaluation" }
+    { "@type": "Thing", "name": "LLM evaluation" },
+    { "@type": "Thing", "name": "Human-in-the-loop AI" },
+    { "@type": "Thing", "name": "AI hallucinations" },
+    { "@type": "Thing", "name": "AI quality assurance" }
    ],
    "mentions": [
     { "@type": "WebPage", "name": "ReLoop.me Profile Intel", "url": "https://www.reloop.me/profile-intel" },
@@ -122,6 +136,21 @@
      "@type": "Question",
      "name": "What is a fail-closed delivery gate?",
      "acceptedAnswer": { "@type": "Answer", "text": "A final check that stops an AI output from being sent when any required check fails or returns no verdict. The output is held internally and a person is alerted, instead of the user receiving it." }
+    },
+    {
+     "@type": "Question",
+     "name": "What is AI quality control?",
+     "acceptedAnswer": { "@type": "Answer", "text": "The checks an AI output passes before anyone sees it: rule checks on its logic and structure, an independent AI reviewer, and a fail-closed gate that can hold it for a person. ReLoop.me's gate held 12 Role Intel reads between 3 October and 12 November 2026, each with a logged reason." }
+    },
+    {
+     "@type": "Question",
+     "name": "How do you prevent AI hallucinations in production?",
+     "acceptedAnswer": { "@type": "Answer", "text": "You can't prevent every one, so you stop them from reaching users: rule checks catch invented figures and broken logic, a second model reviews the draft, and a fail-closed gate holds anything that fails for a person to look at." }
+    },
+    {
+     "@type": "Question",
+     "name": "Why does human-in-the-loop AI matter?",
+     "acceptedAnswer": { "@type": "Answer", "text": "When a check stops an output, a person finds out why. Re-running the AI until something passes would hide the reason it failed, and the same error would come back." }
     },
     {
      "@type": "Question",
@@ -168,6 +197,16 @@
 <div class="wrap cs-grid">
  <div class="cs-main">
 
+  <section class="cs-terms" aria-labelledby="terms-h">
+   <h2 id="terms-h">Key terms</h2>
+   <dl>
+    <dt>AI quality control</dt><dd>The checks an AI output passes before anyone sees it: rules that test its logic and structure, a second reviewer, and a gate that can stop it. It is how a production system keeps hallucinations, contradictions and invented figures away from users.</dd>
+    <dt>Fail-closed AI system</dt><dd>A system that holds an output when a check fails or returns no verdict, instead of sending it anyway. When in doubt, nothing ships.</dd>
+    <dt>Human in the loop</dt><dd>A person decides what happens to an output the checks stopped, instead of the system re-running it until something passes.</dd>
+    <dt>Independent AI reviewer</dt><dd>A second AI model, with no memory of the one that wrote the draft, that scores the draft and returns specific corrections.</dd>
+   </dl>
+  </section>
+
   <section aria-labelledby="challenge-h">
    <h2 id="challenge-h">The challenge: AI getting it “mostly right” isn't good enough</h2>
    <p class="descriptor">First, some context</p>
@@ -201,6 +240,15 @@
   <section aria-labelledby="built-h">
    <p class="descriptor">The solution</p>
    <h2 id="built-h">What we built</h2>
+   <p>Six layers, in the order a report meets them. We call it <strong>the ZORRI fail-closed architecture</strong>:</p>
+   <ol class="cs-method">
+    <li><strong>Input guards</strong>: stop broken or blank inputs before any tokens are spent</li>
+    <li><strong>Rule checks</strong>: test the logic and structure of the AI read</li>
+    <li><strong>Independent AI reviewer</strong>: a second model scores the draft and returns corrections</li>
+    <li><strong>Delivery gate</strong>: any failed check, or no verdict, holds the output</li>
+    <li><strong>Human escalation</strong>: the owner is alerted and decides</li>
+    <li><strong>Versioned rollback</strong>: every change can be undone in one step</li>
+   </ol>
    <figure class="cs-figure" style="margin:0 0 var(--s3)">
     <img src="/assets/img/case-studies/every-report-meets-the-gate.jpg" width="1680" height="944" alt="Illustration: reports ride a conveyor towards a delivery gate. One worried report marked with a question mark is lifted into a box labelled Held and the owner is alerted by email; the gate says: Not today, a human will look at you first. The good reports carry on to the user's mailbox.">
    </figure>
@@ -298,8 +346,8 @@
   </figure>
 
   <section aria-labelledby="tilts-h">
-   <h2 id="tilts-h">The tilts</h2>
-   <p>Like a ReLoop.me report, the engine leans a certain way on purpose. Each lean, and why:</p>
+   <h2 id="tilts-h">The ZORRI reliability principles</h2>
+   <p>Like a ReLoop.me report, the engine tilts a certain way on purpose. Three principles, and why:</p>
    <figure class="cs-figure" style="margin-top:var(--s3)">
     <div class="frame">
      <svg viewBox="0 80 760 140" role="img" aria-labelledby="tilt-t tilt-d" xmlns="http://www.w3.org/2000/svg" style="min-width:600px">
@@ -381,10 +429,11 @@
     <li><strong>A fail-closed gate</strong> that stops errors internally, with human-in-the-loop alerts, so recurring errors are caught early and the system improves over time</li>
    </ul>
    <p>For any workflow where a wrong AI answer costs user trust or revenue.</p>
+   <p>What is different: the checks aren't promised, they're logged. Every hold above has a date, a stage and a reason, and the architecture runs in production on ReLoop.me today.</p>
 
    <h3>The logic travels</h3>
    <p><strong>ReLoop.me was one specific use case.</strong> It reads CVs and job ads, so its checks are about scoring bands, evidence and pay.</p>
-   <p>The architecture itself is not about CVs. <em>Any AI product that hands people an answer can borrow it.</em> Layer by layer:</p>
+   <p>The ZORRI fail-closed architecture is not about CVs. <em>Any AI product that hands people an answer can borrow it.</em> Layer by layer:</p>
    <table class="cs-table">
     <thead><tr><th scope="col">Layer</th><th scope="col">In ReLoop.me</th><th scope="col">In another AI product, for example</th></tr></thead>
     <tbody>
@@ -457,4 +506,4 @@ var t=document.querySelector(".to-top");if(t){var f=function(){t.classList.toggl
 </script>
 </body>
 </html>
-<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.6.0 END -->
+<!-- ZORRI /case-studies/ai-quality-control — VERSION 2.7.0 END -->
