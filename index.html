@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<!-- ZORRI / — VERSION 4.4.0 -->
+<!-- ZORRI / — VERSION 4.5.0 -->
+<!-- 4.5.0 (2026-11-27): new "Case studies" section after Products (two cards with featured images, link to all case studies); team section switched to white so blocks still alternate; Quick Job Ad Check Chrome extension added to the ReLoop.me product list and to the ReLoop.me JSON-LD description. Everything else unchanged from 4.4.0. -->
 <!-- 4.4.0 (2026-11-25): Google Analytics (G-HQ5BXEPBLE) behind a consent banner via /assets/consent.js 1.0.0; nothing loads before Accept. Everything else unchanged from 4.3.0. -->
 <!-- 4.3.0 (2026-11-23): added "Case studies" to the main nav. Everything else unchanged from 4.2.0. -->
 <html lang="en">
@@ -28,6 +29,18 @@
 <link rel="preload" href="/assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/zorri.css">
+<style>
+.home-cs { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s3); }
+@media (max-width: 48rem) { .home-cs { grid-template-columns: 1fr; } }
+.home-cs li { background: var(--white); border-radius: 24px; padding: var(--s3); display: flex; flex-direction: column; }
+.home-cs .thumb { display: block; margin-bottom: var(--s3); border-radius: 16px; overflow: hidden; background: #fff; }
+.home-cs .thumb img { display: block; width: 100%; height: auto; }
+.home-cs .meta { font-size: var(--t-small); margin-bottom: var(--s1); }
+.home-cs h3 { margin-bottom: var(--s2); }
+.home-cs h3 a { text-decoration: none; }
+.home-cs h3 a:hover { text-decoration: underline; }
+.home-cs .more { margin-top: auto; }
+</style>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -181,7 +194,7 @@
    "manufacturer": {
     "@id": "https://zorri.ro/#org"
    },
-   "description": "Capability intelligence platform for nonlinear careers and skills-based hiring. Profile Intel reads a CV; Role Intel reads a job description. Built and operated by ZORRI S.R.L."
+   "description": "Capability intelligence platform for nonlinear careers and skills-based hiring. Profile Intel reads a CV; Role Intel reads a job description. Also available as an API and MCP server and as the Quick Job Ad Check Chrome extension. Built and operated by ZORRI S.R.L."
   },
   {
    "@type": "WebSite",
@@ -311,6 +324,7 @@
      <li><a href="https://www.reloop.me/profile-intel">Profile Intel</a></li>
      <li><a href="https://api.reloop.me/">API &amp; MCP server</a></li>
      <li><a href="https://www.reloop.me/esco-skills-map">ESCO Skills Map</a></li>
+     <li><a href="https://chromewebstore.google.com/detail/hcdbodneibijamaaahoianicomdiacdp">Quick Job Ad Check for Chrome</a></li>
      <li>Job Ad Index <span class="soon">coming soon</span></li>
     </ul>
     <p class="prod-legal"><a href="https://www.reloop.me/privacy">Privacy</a> · <a href="https://api.reloop.me/">API docs</a></p>
@@ -320,7 +334,33 @@
  </div>
 </section>
 
-<section class="section block-panel" aria-labelledby="who-h">
+<section class="section block-panel" aria-labelledby="cases-h">
+ <div class="wrap">
+  <div class="section-head">
+   <h2 id="cases-h">Case studies</h2>
+   <p>How we build, test and run AI in production, shown on ReLoop.me, our own product.</p>
+  </div>
+  <ul class="home-cs">
+   <li>
+    <a class="thumb" href="/case-studies/ai-repeatability" tabindex="-1" aria-hidden="true"><img src="/assets/img/case-studies/ai-repeatability-featured.jpg" width="1200" height="630" alt="" loading="lazy"></a>
+    <p class="meta">AI orchestration · Evaluation · <time datetime="2026-11-27">27 November 2026</time></p>
+    <h3><a href="/case-studies/ai-repeatability">How to measure and build AI repeatability</a></h3>
+    <p>A fixed vocabulary, calculated pay logic and an automated repeat-run test. Role type identical in 30 of 30 runs.</p>
+    <p class="more"><a href="/case-studies/ai-repeatability">Read the case study</a></p>
+   </li>
+   <li>
+    <a class="thumb" href="/case-studies/ai-quality-control" tabindex="-1" aria-hidden="true"><img src="/assets/img/case-studies/ai-quality-control-featured.jpg" width="1200" height="630" alt="" loading="lazy"></a>
+    <p class="meta">AI orchestration · <time datetime="2026-11-23">23 November 2026</time></p>
+    <h3><a href="/case-studies/ai-quality-control">How to stop wrong AI answers before they reach users</a></h3>
+    <p>Rule checks, an independent AI reviewer and a fail-closed delivery gate. 573 reads produced, 12 held by the gate.</p>
+    <p class="more"><a href="/case-studies/ai-quality-control">Read the case study</a></p>
+   </li>
+  </ul>
+  <p class="section-cta"><a class="button button-sun" href="/case-studies/">All case studies</a></p>
+ </div>
+</section>
+
+<section class="section block-white" aria-labelledby="who-h">
  <div class="wrap">
   <div class="section-head">
    <h2 id="who-h">The team behind ZORRI</h2>
@@ -381,4 +421,4 @@
 </script>
 </body>
 </html>
-<!-- ZORRI / — VERSION 4.4.0 END -->
+<!-- ZORRI / — VERSION 4.5.0 END -->
