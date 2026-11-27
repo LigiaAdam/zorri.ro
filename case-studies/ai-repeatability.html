@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<!-- ZORRI /case-studies/ai-repeatability — VERSION 1.0.0 -->
+<!-- ZORRI /case-studies/ai-repeatability — VERSION 1.1.0 -->
+<!-- 1.1.0 (2026-11-27): founder's edits from the fine-tune doc, word for word (header, challenge, solution intro, vocabulary, pay logic, transparency, results). Typos fixed: slightly, earn, 'Here are some of those'. Profile Intel line kept to the test's unit: 0 of 8 runs (the doc read as 8 labels). Title 'build' (was 'engineer') in H1, title, og, JSON-LD, card. Byline without 'founder of ZORRI'. Everything else unchanged from 1.0.0. -->
 <!-- 1.0.0 (2026-11-27): ready to publish. Brought to the case study 1 (2.5.0) template: visible byline with Person author in JSON-LD,
      LinkedIn-safe featured image 1200x630 (og/twitter), article dates, WebSite + FAQPage in JSON-LD, consent.js (GA behind the banner,
      privacy link), robots index. The three draft checks resolved against reloop.me/methodology (read 27 Nov 2026):
@@ -15,7 +16,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Case study: how to measure and engineer AI repeatability — ZORRI</title>
+<title>Case study: how to measure and build AI repeatability — ZORRI</title>
 <meta name="description" content="How ReLoop.me measured whether its AI gives the same verdict twice, published the results, and engineered out the drift: fixed vocabulary, calculated pay logic and an automated repeat-run test. 30 of 30 identical role types.">
 <meta name="author" content="Ligia Adam, ZORRI">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -26,7 +27,7 @@
 <meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ZORRI">
-<meta property="og:title" content="Case study: how to measure and engineer AI repeatability">
+<meta property="og:title" content="Case study: how to measure and build AI repeatability">
 <meta property="og:description" content="Same input, same-ish answer from AI, every time. Fixed vocabulary, calculated pay logic and a repeat-run test for ReLoop.me.">
 <meta property="og:url" content="https://zorri.ro/case-studies/ai-repeatability">
 <meta property="og:image" content="https://zorri.ro/assets/img/case-studies/ai-repeatability-featured.jpg">
@@ -72,7 +73,7 @@
   {
    "@type": "Article",
    "@id": "https://zorri.ro/case-studies/ai-repeatability#article",
-   "headline": "How to measure and engineer AI repeatability",
+   "headline": "How to measure and build AI repeatability",
    "alternativeHeadline": "Same input, same-ish answer from AI, every time",
    "description": "How ReLoop.me benchmarked the consistency of its capability intelligence reads, published the results, and engineered out probabilistic drift with a fixed vocabulary, calculated pay logic and an automated repeat-run test.",
    "articleSection": "Case studies",
@@ -153,10 +154,10 @@
 <article>
 <header class="cs-head">
  <div class="wrap">
-  <p class="descriptor"><a href="/case-studies/">Case study</a> · AI orchestration · evaluation</p>
-  <h1>How to measure and engineer AI repeatability</h1>
-  <p class="line">Same input, same-ish answer from AI, every time. How ReLoop.me benchmarked output consistency, published the results, and engineered out probabilistic drift.</p>
-  <p class="descriptor" style="margin-top:var(--s2)">By <a href="https://www.linkedin.com/in/ligiaadam" rel="author">Ligia Adam</a>, founder of ZORRI · <time datetime="2026-11-27">27 November 2026</time></p>
+  <p class="descriptor"><a href="/case-studies/">Case study</a> · AI orchestration · Evaluation</p>
+  <h1>How to measure and build AI repeatability</h1>
+  <p class="line">Same input, same<em>-ish</em> answer from AI, every time. A bit tricky in practice.<br>How <a href="https://www.reloop.me/?utm_source=zorri.ro&amp;utm_medium=case_study">ReLoop.me</a> ruled out AI probabilistic drift and benchmarked its engine’s AI consistency.</p>
+  <p class="descriptor" style="margin-top:var(--s2)">By <a href="https://www.linkedin.com/in/ligiaadam" rel="author">Ligia Adam</a> · <time datetime="2026-11-27">27 November 2026</time></p>
  </div>
  <svg class="cs-loop" viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
   <path d="M0 40 C 200 4, 360 4, 560 32 S 960 62, 1200 22" fill="none" stroke="#19b7a5" stroke-opacity="0.16" stroke-width="10" stroke-linecap="round"/>
@@ -170,15 +171,15 @@
  <div class="cs-main">
 
   <section aria-labelledby="challenge-h">
-   <h2 id="challenge-h">The challenge: when the same input produces a different verdict</h2>
+   <h2 id="challenge-h">The challenge: you usually don’t get the same answer twice from AI</h2>
    <p class="descriptor">First, some context</p>
-   <p><a href="https://www.reloop.me/?utm_source=zorri.ro&amp;utm_medium=case_study">ReLoop.me</a> evaluates CVs and job descriptions to produce structured capability intelligence (<a href="https://www.reloop.me/profile-intel?utm_source=zorri.ro&amp;utm_medium=case_study">Profile Intel</a> and <a href="https://www.reloop.me/role-intel?utm_source=zorri.ro&amp;utm_medium=case_study">Role Intel</a>), including <strong>role classification</strong>, <strong>seniority grading</strong> and <strong>market compensation signals</strong>.</p>
+   <p><a href="https://www.reloop.me/?utm_source=zorri.ro&amp;utm_medium=case_study">ReLoop.me</a> reads between the lines of CVs and job descriptions to reveal the overall shape and form of the professional capability mix underneath. We call that capability intelligence (as revealed by <a href="https://www.reloop.me/profile-intel?utm_source=zorri.ro&amp;utm_medium=case_study">Profile Intel</a> and <a href="https://www.reloop.me/role-intel?utm_source=zorri.ro&amp;utm_medium=case_study">Role Intel</a>, the two flagship products), which covers things like <strong>role classification</strong>, <strong>seniority grading, operating type, transferability,</strong> and <strong>market value signals</strong>.</p>
    <p class="descriptor">The problem?</p>
-   <p>General-purpose AI models are inherently probabilistic.</p>
-   <p>Ask any chat AI to evaluate the exact same CV twice, and it can return a different seniority tier, or a wildly different salary estimate, on the second try.</p>
-   <blockquote class="cs-quote"><p>A verdict that shifts on a re-run undermines trust, and cannot support a real decision.</p></blockquote>
-   <p>When people rely on an assessment to negotiate pay or evaluate talent, that matters.</p>
-   <p>To make ReLoop.me reliable enough for high-stakes career and hiring decisions, we needed to <strong>measure how often the engine gave the same verdict twice</strong>, and then engineer away and fix the parts that moved.</p>
+   <p>Well, AIs are inherently probabilistic.<br>Which means that artificial intelligence makes predictions, decisions, or generates outputs based on probabilities and statistical patterns rather than fixed, rigid rules. Which is fine for most things, but when it comes to complex work or a very distinct career journey, you’d like it to be understood in its complexity, despite the odds.</p>
+   <p>If you ask any AI to evaluate the exact same CV twice, it will use different words to tell you different things. Even when you ask for specifics, like seniority level or a salary estimate, it can return wildly different results. And that applies to almost any domain, or tool that is AI-powered.</p>
+   <blockquote class="cs-quote"><p>A response that slightly changes each turn cannot support a real decision.</p></blockquote>
+   <p>And in a tool like ReLoop.me, when people rely on an assessment to negotiate a salary or evaluate talent, that really matters.</p>
+   <p>So, in order to make ReLoop.me reliable enough, and already making active efforts <a href="/case-studies/ai-quality-control">to stop wrong AI answers before they reach users</a>, we first needed to <strong>measure how often the engine gave the same verdict twice</strong>. So we could fix the parts that caused the drift.</p>
   </section>
 
   <figure class="cs-figure">
@@ -189,26 +190,28 @@
   <section aria-labelledby="built-h">
    <p class="descriptor">The solution</p>
    <h2 id="built-h">What we built</h2>
+   <p>In a nutshell, the solution was a fixed, structured, personalized and proprietary system of rules.</p>
 
    <h3>A fixed, standardised vocabulary</h3>
    <p>When asked, AI uses a lot of different words to refer to the same thing.</p>
    <p>So we replaced open-ended AI labelling with a strict taxonomy: <strong>seven role types</strong>, a <strong>single standardised seniority ladder</strong>, and <strong>explicitly defined capability levels</strong> that the model must map to, rather than invent.</p>
-   <p>Choosing and settling on the final vocabulary took deeper research across a wide range of topics. Eventually, the fixed vocabulary became a key part of the engine's proprietary framework.</p>
+   <p>Choosing and settling on the final vocabulary inside ReLoop.me meant a side quest of deeper research across a wide range of topics, ranging from psychology to HR to social sciences, math and all that. Eventually, the fixed vocabulary became a key part of the engine's proprietary framework, and it is anchored into the best human published research and expertise evidenced by AI as relevant to this particular pursuit.</p>
 
-   <h3>Deterministic, calculated pay logic</h3>
-   <p>Generic AI is probabilistic. It will give you the average, most recent values of whatever it weights most when evaluating the data. We approached capability market value differently.</p>
-   <p><strong>We decoupled compensation figures from generative guessing.</strong></p>
-   <p>Inside ReLoop.me, pay bands are pulled programmatically from structured lookup tables indexed by role family, location and seniority tier, each explicitly labelled as <strong>Calibrated</strong> or <strong>Estimated</strong>.</p>
-   <p>This way, the deterministic part works across nonlinear careers as well. <em>For tailored, not averaged, measures.</em></p>
+   <h3>Pre-determined (deterministic) and calculated pay logic</h3>
+   <p>AIs work best with data and numbers.<br>It’s really good at estimating how much money a junior person with no prior experience should earn, or the compensation value for a specialized line work, based on published data sets it can feed on. And mostly, that’s good enough.</p>
+   <p>But in ReLoop.me we approached capability market value differently.<br>A key feature inside the ReLoop.me products is that they also offer an estimate of what the market value for a person’s <em>specific</em> set of skills is (or what a very complex job should really be paying).</p>
+   <p>AIs are good at guessing, but they can also be REALLY off when they lack the data.</p>
+   <p>So <strong>we decoupled compensation figures from generative guessing.</strong></p>
+   <p>Inside ReLoop.me, pay estimates are pulled programmatically from structured lookup tables indexed by role family, location and seniority tier, each explicitly labelled as <strong>Calibrated</strong> or <strong>Estimated</strong>. This way, the deterministic part works across nonlinear careers as well.</p>
+   <p><em>For tailored, not averaged measures.</em></p>
 
    <h3>An automated AI drift test</h3>
-   <p>Drift is common with AI. But what is drifting needs constant monitoring, especially when it can affect the rest of the moving pieces.</p>
-   <p>So we built an internal, automated evaluation suite that runs the exact same CV or job ad through the pipeline <strong>8 to 30 consecutive times</strong>, and programmatically compares the outputs to measure drift across every field.</p>
+   <p>Drift is common with AI. But what is drifting also needs constant monitoring, especially when it can affect the rest of the moving pieces inside a system.</p>
+   <p>So we built an internal, automated evaluation set that runs the exact same CV or job ad through the pipeline <strong>8 to 30 consecutive times</strong>, and programmatically compares the outputs to measure AI drift across every field.</p>
    <p>This helps with internal calibration and continuous improvement.</p>
 
    <h3>Radical transparency, via a public methodology page</h3>
-   <p>At ZORRI, we believe AI governance needs human accountability.</p>
-   <p>So we publish the results of the repeatability tests we run, <strong>including where variance still occurs</strong>, at <a href="https://www.reloop.me/methodology?utm_source=zorri.ro&amp;utm_medium=case_study">reloop.me/methodology</a>.</p>
+   <p>At ZORRI, we believe AI governance needs human accountability.<br>So we build in public our own products, and we publish the results of the repeatability tests we run in the open, <strong>including where variance still occurs</strong>. Learn more at <a href="https://www.reloop.me/methodology?utm_source=zorri.ro&amp;utm_medium=case_study">reloop.me/methodology</a>.</p>
   </section>
 
   <figure class="cs-figure">
@@ -218,16 +221,17 @@
 
   <section aria-labelledby="result-h">
    <h2 id="result-h">Results</h2>
-   <p>Self-run repeat-run tests on production settings, 1 October 2026: one CV and one job ad, 30 runs each, against two general-purpose models. Published at <a href="https://www.reloop.me/methodology?utm_source=zorri.ro&amp;utm_medium=case_study">reloop.me/methodology</a>:</p>
+   <p>Here are some of those internal test results, in the open.</p>
+   <p>Self-run repeat-run tests on production settings, 1 October 2026:<br>one CV and one job ad, 30 runs each, against two general-purpose AI models.</p>
+   <p>Published at <a href="https://www.reloop.me/methodology?utm_source=zorri.ro&amp;utm_medium=case_study">reloop.me/methodology</a>:</p>
    <ul class="cs-stats">
     <li><strong>30 / 30</strong><span>role type, identical on the CV and on the job ad</span></li>
-    <li><strong>30 / 30</strong><span>CV seniority, identical. The two general-purpose models shifted verdict in 6 and 3 of 30 runs</span></li>
-    <li><strong>93%</strong><span>of job-ad capabilities kept the same band across repeat runs, against 87% and 92% for the two general-purpose models</span></li>
+    <li><strong>30 / 30</strong><span>CV seniority, identical. The two commercial AI models shifted verdict in 6 and 3 of 30 runs</span></li>
+    <li><strong>93%</strong><span>of job-ad capabilities kept the same band across repeat runs, against 87% and 92% for the two general-purpose AI models</span></li>
    </ul>
-   <ul>
-    <li><strong>Role Quick Check:</strong> matched the expected answer in <strong>24 of 24</strong> runs on a fixed set of 12 job ads in October, and in <strong>23 of 24</strong> reads in the November re-test (ReLoop.me Benchmark Notes No. 1).</li>
-    <li><strong>No echo of self-labels:</strong> when a CV rated its own capabilities, those self-ratings appeared in <strong>0 of 8</strong> Profile Intel runs, against 4 to 8 of 8 for general-purpose models.</li>
-   </ul>
+   <p>And our own engine’s results, which is AI-powered, but also kept in check by rules:</p>
+   <p><strong>Role Quick Check</strong> (aka the core engine of Role Intel)<br>matched the expected answer in <strong>24 of 24</strong> runs on a fixed set of 12 job ads in October, and in <strong>23 of 24</strong> reads in the November re-test (ReLoop.me Benchmark Notes No. 1).</p>
+   <p><strong>Profile Intel:</strong><br><strong>Capability Interpretation for real, not taking for granted what people claim in their CV:</strong><br>Profile Intel mirrored the professional labels a CV gave itself, where they didn’t fit the rest of the resume, in <strong>0 of 8</strong> runs, against 4 to 8 of 8 runs for commercial AIs.</p>
 
    <h3>Post-calibration improvements</h3>
    <p>Internal remeasurement on synthetic CVs, 21 November 2026:</p>
@@ -238,8 +242,8 @@
    </ul>
 
    <h3>What still varies inside the ReLoop.me engine</h3>
-   <p>Running a live, AI-powered system means constantly adapting to change. A lot of things vary, and we found it's best to keep checking.</p>
-   <p>The most recent tests show that, on genuinely ambiguous job ads, <strong>seniority grading</strong> and <strong>which of two role types leads</strong> can still vary between full runs. On the 1 October job ad, seniority read Senior Manager in 22 of 30 runs and Senior in 8.</p>
+   <p>Running a live, AI-powered system means constantly adapting to change.<br>A lot of things vary, and we found it's best to keep checking.</p>
+   <p>The most recent tests show that, on genuinely ambiguous job ads, <strong>seniority grading</strong> and <strong>which of two role types leads</strong> can still vary between full runs.</p>
    <p><strong>Natural-language phrasing</strong> also shifts from run to run: the wording of a capability changes even when its level and band hold. That's why the methodology page advises leaning on the level and band, not the exact phrase.</p>
    <p>Both limitations are documented openly on the <a href="https://www.reloop.me/methodology?utm_source=zorri.ro&amp;utm_medium=case_study">methodology page</a>, and we're working on them.</p>
   </section>
@@ -310,4 +314,4 @@ var t=document.querySelector(".to-top");if(t){var f=function(){t.classList.toggl
 </script>
 </body>
 </html>
-<!-- ZORRI /case-studies/ai-repeatability — VERSION 1.0.0 END -->
+<!-- ZORRI /case-studies/ai-repeatability — VERSION 1.1.0 END -->
